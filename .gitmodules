@@ -49,3 +49,6 @@
 [submodule "_vim/bundle/pyflakes-pathogen"]
 	path = _vim/bundle/pyflakes-pathogen
 	url = https://github.com/mitechie/pyflakes-pathogen.git
+[submodule "_vim/bundle/vcscommand"]
+	path = _vim/bundle/vcscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
