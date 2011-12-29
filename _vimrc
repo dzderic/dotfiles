@@ -94,13 +94,13 @@ map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " committing
-nmap <leader>c :VCSCommit<CR>
+nmap <leader>vc :VCSCommit<CR>
 
 " checking status
-nmap <leader>s :VCSStatus<CR>
+nmap <leader>vs :VCSStatus<CR>
 
 " diffing
-nmap <leader>d :VCSDiff<CR>
+nmap <leader>vd :VCSDiff<CR>
 
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
