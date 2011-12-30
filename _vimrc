@@ -102,6 +102,9 @@ nmap <leader>vs :VCSStatus<CR>
 " diffing
 nmap <leader>vd :VCSDiff<CR>
 
+" blaming
+nmap <leader>vb :VCSBlame<CR>
+
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
 
