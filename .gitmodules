@@ -46,3 +46,9 @@
 [submodule "_vim/bundle/vcscommand"]
 	path = _vim/bundle/vcscommand
 	url = https://github.com/vim-scripts/vcscommand.vim.git
+[submodule "_vim/bundle/go"]
+	path = _vim/bundle/go
+	url = https://github.com/fsouza/go.vim.git
+[submodule "_vim/bundle/acp"]
+	path = _vim/bundle/acp
+	url = https://github.com/vim-scripts/AutoComplPop.git
