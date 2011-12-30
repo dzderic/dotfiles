@@ -96,6 +96,9 @@ nmap <leader>vc :VCSCommit<CR>
 " checking status
 nmap <leader>vs :VCSStatus<CR>
 
+" checking logs
+nmap <leader>vl :VCSLog<CR>
+
 " diffing
 nmap <leader>vd :VCSDiff<CR>
 
@@ -222,7 +225,7 @@ set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
-set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\
+set statusline=%<%f\ %h%m%r%=%l,%c%V\ %P
 
 """ Searching and Patterns
 set ignorecase              " Default to using case insensitive searches,
