@@ -1,0 +1,30 @@
+# Check for an interactive session
+[ -z "$PS1" ] && return
+
+# Set up keychain
+keychain -q ~/.ssh/id_rsa
+
+#merged mkdir/cd
+function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
+
+alias sl="sl -Fe"
+
+# Random settings
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+export GOROOT=/home/david/Code/go
+
+# Editor:
+export EDITOR=vim
+
+# PATH changes
+export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin
+
+# Prompt
+DEFAULT="[37;40m"
+PINK="[35;40m"
+GREEN="[32;40m"
+ORANGE="[33;40m"
+
+export PS1='\n\e${PINK}\u \
+\e${DEFAULT}in \e${GREEN}\w\
+\e${DEFAULT}\n$ '
