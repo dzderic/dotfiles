@@ -90,6 +90,9 @@ map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" copying to clipboard
+nmap <leader>cb :w !xclip -i -selection clipboard<CR><CR>
+
 " committing
 nmap <leader>vc :VCSCommit<CR>
 
