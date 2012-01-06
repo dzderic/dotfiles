@@ -55,3 +55,6 @@
 [submodule "_vim/bundle/wikipedia"]
 	path = _vim/bundle/wikipedia
 	url = https://github.com/vim-scripts/wikipedia.vim.git
+[submodule "_vim/bundle/puppet"]
+	path = _vim/bundle/puppet
+	url = https://github.com/rodjek/vim-puppet.git
