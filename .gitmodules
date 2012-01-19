@@ -49,9 +49,6 @@
 [submodule "_vim/bundle/go"]
 	path = _vim/bundle/go
 	url = https://github.com/fsouza/go.vim.git
-[submodule "_vim/bundle/acp"]
-	path = _vim/bundle/acp
-	url = https://github.com/vim-scripts/AutoComplPop.git
 [submodule "_vim/bundle/wikipedia"]
 	path = _vim/bundle/wikipedia
 	url = https://github.com/vim-scripts/wikipedia.vim.git
