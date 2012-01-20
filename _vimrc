@@ -299,8 +299,46 @@ if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
 
-" Window resize mappings
-map <S-Up> <c-w>-
-map <S-Down> <c-w>+
-map <S-Left> <c-w>>
-map <S-Right> <c-w><
+" Window resizing mappings
+nnoremap <S-Up> :normal <c-r>=Resize('+')<CR><CR>
+nnoremap <S-Down> :normal <c-r>=Resize('-')<CR><CR>
+nnoremap <S-Left> :normal <c-r>=Resize('<')<CR><CR>
+nnoremap <S-Right> :normal <c-r>=Resize('>')<CR><CR>
+function! Resize(dir)
+  let this = winnr()
+  if '+' == a:dir || '-' == a:dir
+    execute "normal <c-w>k"
+    let up = winnr()
+    if up != this
+      execute "normal <c-w>j"
+      let x = 'bottom'
+    else
+      let x = 'top'
+    endif
+  elseif '>' == a:dir || '<' == a:dir
+    execute "normal <c-w>h"
+    let left = winnr()
+    if left != this
+      execute "normal <c-w>l"
+      let x = 'right'
+    else
+      let x = 'left'
+    endif
+  endif
+  if ('+' == a:dir && 'bottom' == x) || ('-' == a:dir && 'top' == x)
+    return "5\<c-v>\<c-w>+"
+  elseif ('-' == a:dir && 'bottom' == x) || ('+' == a:dir && 'top' == x)
+    return "5\<c-v>\<c-w>-"
+  elseif ('<' == a:dir && 'left' == x) || ('>' == a:dir && 'right' == x)
+    return "5\<c-v>\<c-w><"
+  elseif ('>' == a:dir && 'left' == x) || ('<' == a:dir && 'right' == x)
+    return "5\<c-v>\<c-w>>"
+  else
+    echo "oops. check your ~/.vimrc"
+    return ""
+  endif
+endfunction
+
+" Awesome tab completion
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
