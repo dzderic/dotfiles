@@ -55,3 +55,6 @@
 [submodule "_vim/bundle/puppet"]
 	path = _vim/bundle/puppet
 	url = https://github.com/rodjek/vim-puppet.git
+[submodule "_vim/bundle/conque-term"]
+	path = _vim/bundle/conque-term
+	url = https://github.com/rosenfeld/conque-term.git
