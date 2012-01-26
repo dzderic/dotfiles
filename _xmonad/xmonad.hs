@@ -26,6 +26,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Named
 import XMonad.Layout.Tabbed
+import XMonad.Layout.Spacing
 
 -------------------------------------------------------------------------------
 -- Main --
@@ -80,7 +81,7 @@ myGSConfig = defaultGSConfig { gs_cellwidth = 160 }
 urgentConfig = UrgencyConfig { suppressWhen = Focused, remindWhen = Dont }
 
 -- borders
-borderWidth' = 1
+borderWidth' = 0
 normalBorderColor'  = "#333333"
 focusedBorderColor' = "#AFAF87"
 
@@ -96,7 +97,7 @@ tabTheme1 = defaultTheme { decoHeight = 16
 workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 -- layouts
-layoutHook' = tile ||| mtile ||| tab ||| full
+layoutHook' = spacing 1 $ tile ||| mtile ||| tab ||| full
   where
     rt = ResizableTall 1 (2/100) (1/2) []
     tile = named "[]=" $ smartBorders rt
@@ -106,7 +107,7 @@ layoutHook' = tile ||| mtile ||| tab ||| full
 
 -------------------------------------------------------------------------------
 -- Terminal --
-terminal' = "sakura"
+terminal' = "gnome-terminal"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --
@@ -163,7 +164,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     
     -- lock screen
-    , ((modMask              , xK_l     ), spawn "slock")
+    -- , ((modMask              , xK_l     ), spawn "slock")
     ]
     ++
     -- mod-[1..9] %! Switch to workspace N

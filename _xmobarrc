@@ -8,7 +8,7 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
     		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
-                    , Run Weather "YMML" ["-t","Melbourne: <tempC>","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 180000
+                    , Run Weather "YMML" ["-t","Melbourne: <tempC>","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 18000
                     ]
        , sepChar = "%"
        , alignSep = "}{"

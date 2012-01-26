@@ -1,13 +1,11 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-# Set up keychain
-keychain -q ~/.ssh/id_rsa
-
 #merged mkdir/cd
 function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
 
-alias sl="sl -Fe"
+alias ls='ls --color=auto'
+alias tmux="tmux -2"
 
 # Random settings
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
@@ -17,7 +15,7 @@ export GOROOT=/home/david/Code/go
 export EDITOR=vim
 
 # PATH changes
-export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin
+export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin
 
 # Prompt
 DEFAULT="[37;40m"
@@ -28,3 +26,6 @@ ORANGE="[33;40m"
 export PS1='\n\e${PINK}\u \
 \e${DEFAULT}in \e${GREEN}\w\
 \e${DEFAULT}\n$ '
+
+# Include a host-specific config
+[ -f ~/.bash_host ] && . ~/.bash_host
