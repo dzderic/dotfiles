@@ -58,3 +58,6 @@
 [submodule "_vim/bundle/conque-term"]
 	path = _vim/bundle/conque-term
 	url = https://github.com/rosenfeld/conque-term.git
+[submodule "_vim/bundle/rope"]
+	path = _vim/bundle/rope
+	url = https://github.com/klen/rope-vim.git
