@@ -5,6 +5,7 @@
 function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
 
 alias ls='ls --color=auto'
+alias sl='sl -e'
 alias tmux="tmux -2"
 
 # Random settings
