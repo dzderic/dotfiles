@@ -19,10 +19,10 @@ export EDITOR=vim
 export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin
 
 # Prompt
-DEFAULT="[37;40m"
-PINK="[35;40m"
-GREEN="[32;40m"
-ORANGE="[33;40m"
+DEFAULT="[0;0m"
+PINK="[38;05;199m"
+GREEN="[38;05;40m"
+ORANGE="[38;05;208m"
 
 export PS1='\n\e${PINK}\u \
 \e${DEFAULT}in \e${GREEN}\w\
