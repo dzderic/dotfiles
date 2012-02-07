@@ -16,7 +16,7 @@ export GOROOT=/home/david/Code/go
 export EDITOR=vim
 
 # PATH changes
-export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin
+export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin:/opt/idea/bin
 
 # Prompt
 DEFAULT="[0;0m"
