@@ -1,0 +1,20 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit && compinit
+autoload -U colors && colors
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+# End of lines configured by zsh-newuser-install
+
+. ~/.bash_profile
+
+bindkey -e
+export PROMPT="
+%{$fg[magenta]%}%n%{$reset_color%} in %{$fg[green]%}%~%{$reset_color%}
+$ "
