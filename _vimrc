@@ -280,7 +280,8 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
 
-
+" Ruby
+au FileType ruby set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Add the virtualenv's site-packages to vim path
 python << EOF
