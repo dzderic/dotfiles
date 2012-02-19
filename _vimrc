@@ -53,20 +53,6 @@ let mapleader=","             " change the leader to be a comma vs slash
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
-fu! SplitScroll()
-    :wincmd v
-    :wincmd w
-    execute "normal! \<C-d>"
-    :set scrollbind
-    :wincmd w
-    :set scrollbind
-endfu
-
-nmap <leader>sb :call SplitScroll()<CR>
-
-
-"<CR><C-w>l<C-f>:set scrollbind<CR>
-
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
@@ -169,19 +155,13 @@ set wildignore+=*.egg-info/**
 
 set grepprg=ack         " replace the default grep program with ack
 
-
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
-
-" Disable the colorcolumn when switching modes.  Make sure this is the
-" first autocmd for the filetype here
-"autocmd FileType * setlocal colorcolumn=0
 
 """ Insert completion
 " don't select first item, follow typing in autocomplete
 set completeopt=menuone,longest,preview
 set pumheight=6             " Keep a small completion window
-
 
 """ Moving Around/Editing
 set cursorline              " have a line indicate the cursor location
@@ -206,10 +186,6 @@ set foldlevel=99            " don't fold by default
 
 " don't outdent hashes
 inoremap # #
-
-" close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 """" Reading/Writing
 set noautowrite             " Never write a file unless I request it.
