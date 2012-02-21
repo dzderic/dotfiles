@@ -238,10 +238,10 @@ if filereadable($VIRTUAL_ENV . '/.vimrc')
 endif
 
 " Window resizing mappings
-nnoremap <S-Up> :normal <c-r>=Resize('+')<CR><CR>
-nnoremap <S-Down> :normal <c-r>=Resize('-')<CR><CR>
-nnoremap <S-Left> :normal <c-r>=Resize('<')<CR><CR>
-nnoremap <S-Right> :normal <c-r>=Resize('>')<CR><CR>
+nnoremap K :normal <c-r>=Resize('+')<CR><CR>
+nnoremap J :normal <c-r>=Resize('-')<CR><CR>
+nnoremap H :normal <c-r>=Resize('<')<CR><CR>
+nnoremap L :normal <c-r>=Resize('>')<CR><CR>
 function! Resize(dir)
   let this = winnr()
   if '+' == a:dir || '-' == a:dir
