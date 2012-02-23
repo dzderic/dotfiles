@@ -176,7 +176,7 @@ set incsearch               " Incrementally search while typing a /regex
 
 """" Display
 let &t_Co=256
-colorscheme molokai
+colorscheme solarized
 
 " Paste from clipboard
 map <leader>p "+p
@@ -236,14 +236,6 @@ EOF
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
-
-" fix meta-keys which generate <Esc>a .. <Esc>z
-let c='a'
-while c <= 'z'
-  exec "set <M-".c.">=\e".c
-  exec "imap \e".c." <M-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
 
 " Window resizing mappings
 nnoremap <M-k> :normal <c-r>=Resize('+')<CR><CR>
