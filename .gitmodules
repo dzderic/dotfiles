@@ -46,3 +46,9 @@
 [submodule "_vim/bundle/solarized"]
 	path = _vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "_vim/bundle/supertab"]
+	path = _vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "_vim/bundle/clojure"]
+	path = _vim/bundle/clojure
+	url = https://github.com/vim-scripts/VimClojure.git
