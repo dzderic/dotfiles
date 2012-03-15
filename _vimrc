@@ -201,6 +201,7 @@ autocmd VimEnter * ino <c-j> <c-r>=TriggerSnippet()<cr>
 autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
 autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+let g:acp_completeoptPreview=1
 
 " ===========================================================
 " FileType specific changes
