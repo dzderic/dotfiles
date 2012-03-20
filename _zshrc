@@ -17,6 +17,8 @@ unset PS1 # unset the bash prompt
 
 eval `dircolors`
 bindkey -e # use emacs key bindings
+autoload -U select-word-style
+select-word-style bash
 export PROMPT="
 %{$fg[magenta]%}%n%{$reset_color%} in %{$fg[green]%}%~%{$reset_color%}
 $ "
