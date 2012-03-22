@@ -67,6 +67,9 @@ nmap <leader>vd :VCSDiff<CR>
 " blaming
 nmap <leader>vb :VCSBlame<CR>
 
+" use fancy powerline symbols
+let g:Powerline_symbols = 'fancy'
+
 " ctrl-jklm  changes to that split
 map <c-j> <c-w>j
 map <c-k> <c-w>k

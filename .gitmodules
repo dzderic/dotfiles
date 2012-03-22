@@ -55,3 +55,6 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/huyz/dircolors-solarized.git
+[submodule "_vim/bundle/powerline"]
+	path = _vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
