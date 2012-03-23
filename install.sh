@@ -7,12 +7,15 @@ read -p "Are you sure you want to clobber all your config files? (y/n)" -n 1
 
 echo
 
-function symlink() {
-    echo "Linking '$1' to '$2'"
-    ln -s "$1" "$2"
-}
 
 cd $HOME
+
+function symlink() {
+    if [[ ! -a "$2" ]]; then
+        echo "Linking '$1' to '$2'"
+        ln -s "$1" "$2"
+    fi
+}
 
 for FILE in $FILES; do
     symlink "$CHECKOUT_DIR/_$FILE" ".$FILE"
