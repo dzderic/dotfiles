@@ -181,6 +181,8 @@ set incsearch               " Incrementally search while typing a /regex
 let &t_Co=256
 colorscheme solarized
 
+set term=screen-256color
+
 " Paste from clipboard
 map <leader>p "+p
 
