@@ -195,11 +195,6 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
-" ==========================================================
-" Javascript
-" ==========================================================
-au BufRead *.js set makeprg=jslint\ %
-
 " Use tab to scroll through autocomplete menus
 autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
 autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
@@ -211,6 +206,9 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " JSON
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
+"
+" Markdown
+autocmd BufNewFile,BufRead *.md setlocal ft=markdown
 
 " Gradle
 autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
@@ -229,6 +227,9 @@ let g:pyflakes_use_quickfix = 0
 
 " Ruby
 au FileType ruby set shiftwidth=2 tabstop=2 softtabstop=2
+
+" Javascript
+au FileType javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Clojure options
 let vimclojure#ParenRainbow = 1
