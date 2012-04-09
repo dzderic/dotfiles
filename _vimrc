@@ -213,20 +213,20 @@ autocmd BufNewFile,BufRead *.md setlocal ft=markdown
 " Gradle
 autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
 
-" Mako/HTML
+" Mako/HTML/Django
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
-"au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
+" let g:pyflakes_use_quickfix = 0
 
 " Ruby
-au FileType ruby set shiftwidth=2 tabstop=2 softtabstop=2
+au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Javascript
 au FileType javascript set shiftwidth=2 tabstop=2 softtabstop=2
