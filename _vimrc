@@ -215,8 +215,10 @@ autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
 
 " Mako/HTML/Django
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" Puppet
+autocmd BufNewFile,BufRead *.pp call Pl#Load()
 
 " Python
 au FileType python set omnifunc=pythoncomplete#Complete

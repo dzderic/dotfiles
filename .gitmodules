@@ -34,9 +34,6 @@
 [submodule "_vim/bundle/wikipedia"]
 	path = _vim/bundle/wikipedia
 	url = https://github.com/vim-scripts/wikipedia.vim.git
-[submodule "_vim/bundle/puppet"]
-	path = _vim/bundle/puppet
-	url = https://github.com/rodjek/vim-puppet.git
 [submodule "_vim/bundle/conque-term"]
 	path = _vim/bundle/conque-term
 	url = https://github.com/rosenfeld/conque-term.git
@@ -58,3 +55,6 @@
 [submodule "_vim/bundle/powerline"]
 	path = _vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "_vim/bundle/puppet"]
+	path = _vim/bundle/puppet
+	url = https://github.com/ajf/puppet-vim.git
