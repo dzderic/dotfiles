@@ -279,6 +279,9 @@ endfunction
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
+" Map space to insert a space and leave insert mode
+nmap <Space> i <Esc>
+
 command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
 vnoremap <silent> <Leader>a :Align<CR>
 function! AlignSection(regex) range
