@@ -201,12 +201,6 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Use tab to scroll through autocomplete menus
-autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
-" This does something
-let g:acp_completeoptPreview=1
-
 " ===========================================================
 " FileType specific changes
 " ============================================================
@@ -282,7 +276,6 @@ function! Resize(dir)
   endif
 endfunction
 
-let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " Map space to insert a space and leave insert mode
