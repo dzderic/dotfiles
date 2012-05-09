@@ -108,6 +108,12 @@ set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
 
+" Some GUI settings
+set guifont=Monaco\ For\ Powerline\ 11  " much better font
+set guioptions-=m                       "remove menu bar
+set guioptions-=T                       "remove toolbar
+set guioptions-=r                       "remove right-hand scroll bar
+
 " don't bell or blink
 set noerrorbells
 set vb t_vb=
@@ -224,8 +230,8 @@ autocmd BufNewFile,BufRead *.pp call Pl#Load()
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window
-" let g:pyflakes_use_quickfix = 0
+" Let pyflakes use the quickfix window
+let g:pyflakes_use_quickfix = 1
 
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -280,7 +286,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " Map space to insert a space and leave insert mode
-nmap <Space> i <Esc>
+nmap <Space> i <Esc>l
 
 command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
 vnoremap <silent> <Leader>a :Align<CR>
