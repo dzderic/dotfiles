@@ -22,9 +22,6 @@
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "_vim/bundle/pyflakes-pathogen"]
-	path = _vim/bundle/pyflakes-pathogen
-	url = https://github.com/mitechie/pyflakes-pathogen.git
 [submodule "_vim/bundle/vcscommand"]
 	path = _vim/bundle/vcscommand
 	url = https://github.com/vim-scripts/vcscommand.vim.git
@@ -61,3 +58,6 @@
 [submodule "_vim/bundle/easymotion"]
 	path = _vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "_vim/bundle/syntastic"]
+	path = _vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

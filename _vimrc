@@ -110,9 +110,10 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 
 " Some GUI settings
 set guifont=Monaco\ For\ Powerline\ 11  " much better font
-set guioptions-=m                       "remove menu bar
-set guioptions-=T                       "remove toolbar
-set guioptions-=r                       "remove right-hand scroll bar
+set guioptions-=m                       " remove menu bar
+set guioptions-=T                       " remove toolbar
+set guioptions-=r                       " remove right-hand scroll bar
+set guioptions-=L                       " remove left-hand scroll bar
 
 " don't bell or blink
 set noerrorbells
