@@ -28,5 +28,8 @@ export PS1='\n\e${PINK}\u \
 \e${DEFAULT}in \e${GREEN}\w\
 \e${DEFAULT}\n$ '
 
+# Disable Ctrl-S
+stty stop undef
+
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host

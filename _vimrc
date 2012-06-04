@@ -274,7 +274,7 @@ function! Resize(dir)
   endif
 endfunction
 
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 " Map space to insert a space and leave insert mode
 nmap <Space> i <Esc>l
