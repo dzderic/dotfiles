@@ -112,6 +112,10 @@ set guioptions-=T                       " remove toolbar
 set guioptions-=r                       " remove right-hand scroll bar
 set guioptions-=L                       " remove left-hand scroll bar
 
+" Make syntastic nicer
+let g:syntastic_enable_signs=0
+let g:syntastic_check_on_open=1
+
 " don't bell or blink
 set noerrorbells
 set vb t_vb=
