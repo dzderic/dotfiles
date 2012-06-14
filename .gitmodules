@@ -58,9 +58,9 @@
 [submodule "_vim/bundle/easymotion"]
 	path = _vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "_vim/bundle/syntastic"]
-	path = _vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "_vim/bundle/vim-ipython"]
 	path = _vim/bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "_vim/bundle/vim-pyflakes"]
+	path = _vim/bundle/vim-pyflakes
+	url = https://github.com/kevinw/pyflakes-vim.git
