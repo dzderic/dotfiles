@@ -73,6 +73,18 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" Handle mintty's escape sequences
+let &t_ti.="^[[?7727h"
+let &t_te.="^[[?7727l"
+noremap <Esc>O[ <Esc>
+noremap! <Esc>O[ <Esc>
+
+" Make esc+key == <M-key>
+for i in range(65,90) + range(97,122)
+  let c = nr2char(i)
+  exec "map \e".c." <M-".c.">"
+endfor
+
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
