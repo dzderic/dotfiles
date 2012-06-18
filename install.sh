@@ -23,5 +23,5 @@ done
 symlink "$CHECKOUT_DIR/dircolors-solarized/dircolors.ansi-dark" .dircolors
 
 mkdir -p .fonts
-symlink "$CHECKOUT_DIR/Monaco_Linux-Powerline.ttf" ".fonts/Monaco_Linux-Powerline.ttf"
+symlink "$CHECKOUT_DIR/Inconsolata.otf" ".fonts/Inconsolata.otf"
 echo "You probably need to run 'sudo fc-cache -vf'"

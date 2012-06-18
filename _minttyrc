@@ -1,8 +1,8 @@
 BoldAsFont=no
 Transparency=off
-Font=Monaco for Powerline
-FontHeight=10
-FontSmoothing=default
+Font=Inconsolata
+FontHeight=12
+FontSmoothing=full
 BoldAsColour=no
 CursorType=block
 CursorBlinks=no
