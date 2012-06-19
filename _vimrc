@@ -238,8 +238,6 @@ autocmd BufNewFile,BufRead *.pp call Pl#Load()
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 1
 
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
