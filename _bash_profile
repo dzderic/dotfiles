@@ -7,6 +7,7 @@ function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias sl='sl -e'
 alias tmux="TERM=screen-256color-bce tmux"
+alias tmux-join="tmux new-session -t"
 
 # Random settings
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
