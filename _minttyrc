@@ -1,6 +1,6 @@
-BoldAsFont=no
+BoldAsFont=yes
 Transparency=off
-Font=Inconsolata
+Font=Ubuntu Mono
 FontHeight=12
 FontSmoothing=full
 BoldAsColour=no
