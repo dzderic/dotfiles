@@ -32,8 +32,5 @@ export PS1='\n\e${PINK}\u \
 # Disable Ctrl-S
 stty stop undef
 
-# By default, forward the SSH agent running on this machine to the host we SSH in to
-alias ssh='ssh -A'
-
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
