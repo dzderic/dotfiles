@@ -4,9 +4,7 @@ FILES="bash_profile tmux.conf vim vimrc zshrc gitconfig minttyrc"
 
 read -p "Are you sure you want to clobber all your config files? (y/n)" -n 1
 [[ ! $REPLY =~ ^[Yy]$ ]] && exit 1
-
 echo
-
 
 cd $HOME
 
@@ -18,10 +16,10 @@ function symlink() {
 }
 
 for FILE in $FILES; do
+    # Remove the old config if it's not a symlink
+    [ -f ".$FILE" ] && [ ! -L ".$FILE" ] && rm -f ".$FILE"
+
+    # Symlink the config to the one in the repo
     symlink "$CHECKOUT_DIR/_$FILE" ".$FILE"
 done
 symlink "$CHECKOUT_DIR/dircolors-solarized/dircolors.ansi-dark" .dircolors
-
-mkdir -p .fonts
-symlink "$CHECKOUT_DIR/Inconsolata.otf" ".fonts/Inconsolata.otf"
-echo "You probably need to run 'sudo fc-cache -vf'"
