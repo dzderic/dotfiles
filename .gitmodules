@@ -1,66 +1,88 @@
 [submodule "_vim/bundle/git"]
 	path = _vim/bundle/git
 	url = https://github.com/tpope/vim-git.git
+    ignore = untracked
 [submodule "_vim/bundle/command-t"]
 	path = _vim/bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+    ignore = untracked
 [submodule "_vim/bundle/ack"]
 	path = _vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/gundo"]
 	path = _vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/pydoc"]
 	path = _vim/bundle/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/pep8"]
 	path = _vim/bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
+    ignore = untracked
 [submodule "_vim/bundle/tasklist"]
 	path = _vim/bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
+    ignore = untracked
 [submodule "_vim/bundle/vcscommand"]
 	path = _vim/bundle/vcscommand
 	url = https://github.com/vim-scripts/vcscommand.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/go"]
 	path = _vim/bundle/go
 	url = https://github.com/fsouza/go.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/wikipedia"]
 	path = _vim/bundle/wikipedia
 	url = https://github.com/vim-scripts/wikipedia.vim.git
+    ignore = untracked
 [submodule "_vim/bundle/conque-term"]
 	path = _vim/bundle/conque-term
 	url = https://github.com/rosenfeld/conque-term.git
+    ignore = untracked
 [submodule "_vim/bundle/scala"]
 	path = _vim/bundle/scala
 	url = https://github.com/derekwyatt/vim-scala.git
+    ignore = untracked
 [submodule "_vim/bundle/solarized"]
 	path = _vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+    ignore = untracked
 [submodule "_vim/bundle/supertab"]
 	path = _vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+    ignore = untracked
 [submodule "_vim/bundle/clojure"]
 	path = _vim/bundle/clojure
 	url = https://github.com/vim-scripts/VimClojure.git
+    ignore = untracked
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/huyz/dircolors-solarized.git
+    ignore = untracked
 [submodule "_vim/bundle/powerline"]
 	path = _vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+    ignore = untracked
 [submodule "_vim/bundle/puppet"]
 	path = _vim/bundle/puppet
 	url = https://github.com/ajf/puppet-vim.git
+    ignore = untracked
 [submodule "_vim/bundle/easymotion"]
 	path = _vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+    ignore = untracked
 [submodule "_vim/bundle/vim-ipython"]
 	path = _vim/bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
+    ignore = untracked
 [submodule "_vim/bundle/vim-pyflakes"]
 	path = _vim/bundle/vim-pyflakes
 	url = https://github.com/kevinw/pyflakes-vim.git
+    ignore = untracked
