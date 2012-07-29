@@ -86,7 +86,3 @@
 	path = _vim/bundle/vim-pyflakes
 	url = https://github.com/kevinw/pyflakes-vim.git
     ignore = untracked
-[submodule "_zsh/syntax-highlighting"]
-	path = _zsh/syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-    ignore = untracked

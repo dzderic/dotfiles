@@ -23,5 +23,3 @@ export PROMPT="
 %{$fg[magenta]%}%n%{$reset_color%} in %{$fg[green]%}%~%{$reset_color%}
 $ "
 export PS1="$PROMPT"
-
-source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
