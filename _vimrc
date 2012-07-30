@@ -245,6 +245,9 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " Javascript
 au FileType javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
+" Haskell
+au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
+
 " Clojure options
 let vimclojure#ParenRainbow = 1
 
