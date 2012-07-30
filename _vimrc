@@ -118,11 +118,11 @@ set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
 
 " Some GUI settings
-set guifont=Monaco\ For\ Powerline\ 11  " much better font
-set guioptions-=m                       " remove menu bar
-set guioptions-=T                       " remove toolbar
-set guioptions-=r                       " remove right-hand scroll bar
-set guioptions-=L                       " remove left-hand scroll bar
+set guifont=Ubuntu\ Mono\ 12  " much better font
+set guioptions-=m             " remove menu bar
+set guioptions-=T             " remove toolbar
+set guioptions-=r             " remove right-hand scroll bar
+set guioptions-=L             " remove left-hand scroll bar
 
 " Make syntastic nicer
 let g:syntastic_enable_signs=0
