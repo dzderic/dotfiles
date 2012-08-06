@@ -20,6 +20,6 @@ bindkey -e # use emacs key bindings
 autoload -U select-word-style
 select-word-style bash
 export PROMPT="
-%{$fg[magenta]%}%n%{$reset_color%} in %{$fg[green]%}%~%{$reset_color%}
+%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[yellow]%}%m%{$reset_color%} in %{$fg[green]%}%~%{$reset_color%}
 $ "
 export PS1="$PROMPT"
