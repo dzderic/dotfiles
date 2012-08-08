@@ -24,8 +24,9 @@ DEFAULT="[0;0m"
 PINK="[38;05;199m"
 GREEN="[38;05;40m"
 ORANGE="[38;05;208m"
+BLDCYAN="[1;36m"
 
-export PS1='\n\e${PINK}\u \
+export PS1='\n\e${PINK}\u\e${BLDCYAN}@\e${DEFAULT}\e${ORANGE}\h \
 \e${DEFAULT}in \e${GREEN}\w\
 \e${DEFAULT}\n$ '
 
