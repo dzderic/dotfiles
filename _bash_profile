@@ -8,9 +8,9 @@ alias ls='ls --color=auto'
 alias sl='sl -e'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tmux-join="tmux new-session -t"
+alias emacs='TERM=screen-16color emacs'
 
 # Random settings
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 export GOROOT=/home/david/Code/go
 
 # Editor:
