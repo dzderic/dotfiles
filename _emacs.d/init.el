@@ -25,3 +25,10 @@
 
 ;; Mapping of various file extensions to modes
 (add-to-list 'auto-mode-alist '("\.pp$" . puppet-mode))
+
+;; make flyspell easy
+(global-set-key (kbd "C-M-<f8>") 'flyspell-buffer)
+(global-set-key (kbd "<f8>") 'flyspell-check-previous-highlighted-word)
+
+;; make org-mode awesome
+(setq org-log-done 'time)
