@@ -233,6 +233,7 @@ autocmd FileType html,xhtml,xml,css,htmldjango setlocal expandtab shiftwidth=2 t
 
 " Puppet
 autocmd BufNewFile,BufRead *.pp call Pl#Load()
+autocmd FileType puppet setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
 au FileType python set omnifunc=pythoncomplete#Complete
