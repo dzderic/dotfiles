@@ -15,6 +15,7 @@ export GOROOT=/home/david/Code/go
 
 # Editor:
 export EDITOR=vim
+export PSQL_EDITOR='vim -c "set ft=sql"'
 
 # PATH changes
 export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin:/opt/idea/bin
