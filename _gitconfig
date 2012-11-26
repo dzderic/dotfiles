@@ -11,3 +11,5 @@
     date = local
 [color]
     ui = auto
+[push]
+	default = simple
