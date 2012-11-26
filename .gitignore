@@ -3,3 +3,4 @@
 *.errors
 xmonad-*-linux
 /_vim/.netrwhist
+*.pyc
