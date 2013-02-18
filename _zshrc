@@ -23,7 +23,6 @@ SAVEHIST=100000
 . ~/.bash_profile
 unset PS1 # unset the bash prompt
 
-eval `dircolors ~/.dircolors`
 bindkey -e # use emacs key bindings
 autoload -U select-word-style
 select-word-style bash
