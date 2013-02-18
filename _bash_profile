@@ -22,12 +22,12 @@ export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local
 
 # Prompt
 DEFAULT="[0;0m"
-PINK="[38;05;199m"
-GREEN="[38;05;40m"
-ORANGE="[38;05;208m"
+PINK="[0;35m"
+GREEN="[0;32m"
+YELLOW="[0;33m"
 BLDCYAN="[1;36m"
 
-export PS1='\n\e${PINK}\u\e${BLDCYAN}@\e${DEFAULT}\e${ORANGE}\h \
+export PS1='\n\e${PINK}\u\e${BLDCYAN}@\e${DEFAULT}\e${YELLOW}\h \
 \e${DEFAULT}in \e${GREEN}\w\
 \e${DEFAULT}\n$ '
 
