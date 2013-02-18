@@ -11,5 +11,5 @@
     date = local
 [color]
     ui = auto
-[push]
-	default = simple
+[url "https://"]
+	insteadOf = git://
