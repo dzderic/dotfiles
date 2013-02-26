@@ -37,5 +37,13 @@ stty stop undef
 # Get pretty ls colours
 eval `dircolors ~/.dircolors`
 
+# Make ~/.bash_history unbounded in size (from: http://mywiki.wooledge.org/BashFAQ/088)
+unset HISTFILESIZE
+HISTSIZE=10000
+PROMPT_COMMAND="history -a"
+export HISTSIZE PROMPT_COMMAND
+
+shopt -s histappend
+
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
