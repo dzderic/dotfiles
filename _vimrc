@@ -133,7 +133,7 @@ set noerrorbells
 set vb t_vb=
 
 " Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc
+set wildignore+=*.so,*.swp,*.o,*.obj,.git,*.pyc,.svn,.hg
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
