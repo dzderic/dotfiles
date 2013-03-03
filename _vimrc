@@ -2,10 +2,8 @@
 " ==========================================================
 " Dependencies - Libraries/Applications outside of vim
 " ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
 " Pyflakes
 " Ack
-" Rake & Ruby for command-t
 
 " ==========================================================
 " Plugins included
@@ -15,9 +13,6 @@
 "
 " GunDo
 "     Visual Undo in vim with diff's to check the differences
-"
-" Command-T
-"     Allows easy search and opening of files within a given path
 "
 " PyFlakes
 "     Underlines and displays errors with Python on-the-fly
@@ -42,9 +37,6 @@ cmap W! w !sudo tee % >/dev/null
 
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
-
-" Run pep8
-let g:pep8_map='<leader>8'
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -88,8 +80,6 @@ endfor
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
-" Run command-t file search
-map <leader>f :CommandT<CR>
 " Ack searching
 nmap <leader>a <Esc>:Ack!
 

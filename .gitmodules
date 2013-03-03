@@ -2,10 +2,6 @@
 	path = _vim/bundle/git
 	url = https://github.com/tpope/vim-git.git
     ignore = untracked
-[submodule "_vim/bundle/command-t"]
-	path = _vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
-    ignore = untracked
 [submodule "_vim/bundle/ack"]
 	path = _vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
@@ -89,6 +85,8 @@
 [submodule "_vim/bundle/clang_complete"]
 	path = _vim/bundle/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
+    ignore = untracked
 [submodule "_vim/bundle/ctrlp"]
 	path = _vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+    ignore = untracked
