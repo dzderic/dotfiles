@@ -1,6 +1,6 @@
 BoldAsFont=yes
 Transparency=off
-Font=Ubuntu Mono
+Font=Monaco
 FontHeight=12
 FontSmoothing=full
 BoldAsColour=no
@@ -16,7 +16,6 @@ Charset=UTF-8
 OpaqueWhenFocused=no
 FontIsBold=no
 ClicksPlaceCursor=no
-
 ForegroundColour=131,148,150
 BackgroundColour=0,43,54
 Black=7,54,66
