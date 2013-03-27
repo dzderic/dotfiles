@@ -35,5 +35,8 @@
 
 ;; make org-mode awesome
 (setq org-log-done 'time)
-(setq org-todo-keywords '((sequence "TODO" "PROGRESS" "DONE")))
-(setq org-todo-keyword-faces '(("PROGRESS" . (:foreground "yellow"))))
+(setq org-todo-keywords '((sequence "TODO" "PROGRESS" "|" "DONE" "WASTE")))
+(setq org-todo-keyword-faces '(("TODO" . (:background "red" :foreground "black" :weight bold))
+                               ("PROGRESS" . (:foreground "yellow" :weight bold))
+                               ("DONE" . (:foreground "green" :weight bold))
+                               ("WASTE" . (:background "magenta" :foreground "black" :weight bold))))
