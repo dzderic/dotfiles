@@ -89,3 +89,9 @@
 [submodule "_vim/bundle/surround"]
 	path = _vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "_vim/bundle/vim-repeat"]
+	path = _vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "_vim/bundle/vim-abolish"]
+	path = _vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
