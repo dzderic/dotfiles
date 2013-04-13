@@ -35,9 +35,6 @@ export PS1='\n\e${PINK}\u\e${BLDCYAN}@\e${DEFAULT}\e${YELLOW}\h \
 # Disable Ctrl-S
 stty stop undef
 
-# Get pretty ls colours
-eval `dircolors ~/.dircolors`
-
 # Make ~/.bash_history unbounded in size (from: http://mywiki.wooledge.org/BashFAQ/088)
 unset HISTFILESIZE
 HISTSIZE=10000
@@ -48,3 +45,7 @@ shopt -s histappend
 
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
+
+# Get pretty ls colours
+eval `dircolors ~/.dircolors`
+
