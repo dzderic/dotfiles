@@ -12,6 +12,7 @@ alias emacs='TERM=screen-16color emacs -nw'
 
 # Random settings
 export GOROOT=/home/david/Code/go
+export SBT_OPTS="-XX:MaxPermSize=128m"
 
 # Editor:
 export EDITOR=vim
