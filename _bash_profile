@@ -49,3 +49,6 @@ shopt -s histappend
 # Get pretty ls colours
 eval `dircolors ~/.dircolors`
 
+# Necessary sudo aliases
+alias please='sudo'
+alias sorry='sudo $( history -p "!!" )'
