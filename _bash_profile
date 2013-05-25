@@ -11,7 +11,6 @@ alias tmux-join="tmux new-session -t"
 alias emacs='TERM=screen-16color emacs -nw'
 
 # Random settings
-export GOROOT=/home/david/Code/go
 export SBT_OPTS="-XX:MaxPermSize=128m"
 
 # Editor:
@@ -19,7 +18,7 @@ export EDITOR=vim
 export PSQL_EDITOR='vim -c "set ft=sql"'
 
 # PATH changes
-export PATH=$PATH:/var/lib/gems/1.8/bin:$GOROOT/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin:/opt/idea/bin
+export PATH=$PATH:/var/lib/gems/1.8/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin:/opt/idea/bin
 
 # Prompt
 DEFAULT="[0;0m"
