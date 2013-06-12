@@ -3,7 +3,7 @@ import os
 import sys
 import subprocess
 
-from IPython.frontend.html.notebook.filenbmanager import FileNotebookManager
+from IPython.frontend.html.notebook.services.notebooks.filenbmanager import FileNotebookManager
 
 root = lambda x: os.path.join(os.path.dirname(inspect.currentframe().f_code.co_filename), x)
 sys.path.append(root('.'))
