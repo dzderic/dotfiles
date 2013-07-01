@@ -242,6 +242,28 @@ au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
 " Clojure options
 let vimclojure#ParenRainbow = 1
 
+" Unite.vim config
+let g:unite_source_history_yank_enable = 1
+let g:unite_winheight = 10
+let g:unite_prompt = '» '
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+if executable('ack-grep')
+  let g:unite_source_grep_command = 'ack-grep'
+  let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+if executable('ack')
+  let g:unite_source_grep_command = 'ack'
+  let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
+nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep grep:.<cr>
+
 " Window resizing mappings
 nnoremap <M-k> :normal <c-r>=Resize('+')<CR><CR>
 nnoremap <M-j> :normal <c-r>=Resize('-')<CR><CR>
