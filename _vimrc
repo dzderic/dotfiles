@@ -4,30 +4,39 @@
 " ==========================================================
 " Pyflakes
 " Ack
-
-" ==========================================================
-" Plugins included
-" ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" ==========================================================
-" Shortcuts
-" ==========================================================
-set nocompatible              " Don't be compatible with vi
+set nocompatible              " be awesome
 let mapleader=","             " change the leader to be a comma vs slash
+
+" Set up NeoBundle
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+let g:neobundle#types#git#default_protocol = 'http'
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Bundles to install
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'VimClojure'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'uggedal/go-vim'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vcscommand.vim'
+
+" Bundle installation check.
+NeoBundleCheck
+
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
@@ -35,14 +44,8 @@ command! W :w
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
-" Toggle the tasklist
-map <leader>td <Plug>TaskList
-
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" copying to clipboard
-nmap <leader>cb :w !xclip -i -selection clipboard<CR><CR>
 
 " committing
 nmap <leader>vc :VCSCommit<CR>
@@ -59,7 +62,7 @@ nmap <leader>vd :VCSDiff<CR>
 " blaming
 nmap <leader>vb :VCSBlame<CR>
 
-" ctrl-jklm  changes to that split
+" ctrl-{jklm} changes to that split
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
@@ -87,14 +90,6 @@ nmap <leader>a <Esc>:Ack!
 map <leader>g :GundoToggle<CR>
 
 " ==========================================================
-" Pathogen - Allows us to organize our vim plugins
-" ==========================================================
-" Load pathogen with docs for all plugins
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-" ==========================================================
 " Basic Settings
 " ==========================================================
 syntax on                     " syntax highlighing
@@ -114,10 +109,6 @@ set guioptions-=T             " remove toolbar
 set guioptions-=r             " remove right-hand scroll bar
 set guioptions-=L             " remove left-hand scroll bar
 
-" Make syntastic nicer
-let g:syntastic_enable_signs=0
-let g:syntastic_check_on_open=1
-
 " don't bell or blink
 set noerrorbells
 set vb t_vb=
@@ -128,9 +119,6 @@ set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
 set grepprg=ack         " replace the default grep program with ack
-
-" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
 
 """ Insert completion
 " don't select first item, follow typing in autocomplete
@@ -192,9 +180,6 @@ let &t_Co=256
 colorscheme solarized
 
 set term=screen-256color
-
-" Paste from clipboard
-map <leader>p "+p
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
@@ -309,6 +294,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 " Map space to insert a space and leave insert mode
 nmap <Space> i <Esc>l
 
+" align stuff
 command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
 vnoremap <silent> <Leader>a :Align<CR>
 function! AlignSection(regex) range

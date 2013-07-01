@@ -7,3 +7,5 @@ xmonad-*-linux
 /_emacs.d/url
 *.cache
 .*.swp
+/_vim/bundle
+!/_vim/bundle/neobundle.vim/
