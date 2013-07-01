@@ -233,18 +233,6 @@ let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
-if executable('ack-grep')
-  let g:unite_source_grep_command = 'ack-grep'
-  let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
-if executable('ack')
-  let g:unite_source_grep_command = 'ack'
-  let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
 nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
