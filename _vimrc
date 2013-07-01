@@ -1,12 +1,8 @@
-" https://github.com/dzderic/dotfiles/
-" ==========================================================
-" Dependencies - Libraries/Applications outside of vim
-" ==========================================================
-" Pyflakes
-" Ack
 set nocompatible              " be awesome
-let mapleader=","             " change the leader to be a comma vs slash
 
+" =========
+" NeoBundle
+" =========
 " Set up NeoBundle
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -36,6 +32,11 @@ NeoBundle 'vcscommand.vim'
 
 " Bundle installation check.
 NeoBundleCheck
+
+" =========
+" Shortcuts
+" =========
+let mapleader=","             " change the leader to be a comma vs slash
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
@@ -67,18 +68,6 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" Handle mintty's escape sequences
-let &t_ti.="^[[?7727h"
-let &t_te.="^[[?7727l"
-noremap <Esc>O[ <Esc>
-noremap! <Esc>O[ <Esc>
-
-" Make esc+key == <M-key>
-for i in range(65,90) + range(97,122)
-  let c = nr2char(i)
-  exec "map \e".c." <M-".c.">"
-endfor
-
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
@@ -88,9 +77,21 @@ nmap <leader>a <Esc>:Ack!
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
-" ==========================================================
-" Basic Settings
-" ==========================================================
+" Quit window on <leader>q
+nnoremap <leader>q :q<CR>
+"
+" hide matches on <leader>space
+nnoremap <leader><space> :nohlsearch<cr>
+
+" Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Map space to insert a space and leave insert mode
+nmap <Space> i <Esc>l
+
+" ==============
+" Basic settings
+" ==============
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
 filetype plugin indent on     " enable loading indent file for filetype
@@ -174,20 +175,25 @@ set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
-"""" Display
+" =====
+" Hacks
+" =====
+" Handle mintty's escape sequences
+let &t_ti.="^[[?7727h"
+let &t_te.="^[[?7727l"
+noremap <Esc>O[ <Esc>
+noremap! <Esc>O[ <Esc>
+
+" Make esc+key == <M-key>
+for i in range(65,90) + range(97,122)
+  let c = nr2char(i)
+  exec "map \e".c." <M-".c.">"
+endfor
+
+" Make colors work
 let &t_Co=256
 colorscheme solarized
-
 set term=screen-256color
-
-" Quit window on <leader>q
-nnoremap <leader>q :q<CR>
-"
-" hide matches on <leader>space
-nnoremap <leader><space> :nohlsearch<cr>
-
-" Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " ===========================================================
 " FileType specific changes
@@ -226,6 +232,9 @@ au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
 " Clojure options
 let vimclojure#ParenRainbow = 1
 
+" ==============
+" Other settings
+" ==============
 " Unite.vim config
 let g:unite_source_history_yank_enable = 1
 let g:unite_force_overwrite_statusline = 0
@@ -276,11 +285,6 @@ function! Resize(dir)
     return ""
   endif
 endfunction
-
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-
-" Map space to insert a space and leave insert mode
-nmap <Space> i <Esc>l
 
 " align stuff
 command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
