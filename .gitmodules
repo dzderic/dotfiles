@@ -98,3 +98,7 @@
 	path = _vim/bundle/unite
 	url = http://github.com/Shougo/unite.vim.git
     ignore = untracked
+[submodule "_vim/bundle/vimproc"]
+	path = _vim/bundle/vimproc
+	url = http://github.com/Shougo/vimproc.vim.git
+    ignore = untracked
