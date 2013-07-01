@@ -37,7 +37,6 @@ NeoBundle 'vcscommand.vim'
 " Bundle installation check.
 NeoBundleCheck
 
-
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
@@ -229,6 +228,7 @@ let vimclojure#ParenRainbow = 1
 
 " Unite.vim config
 let g:unite_source_history_yank_enable = 1
+let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
