@@ -261,8 +261,8 @@ if executable('ack')
 endif
 
 nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
-nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep grep:.<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
+nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 
 " Window resizing mappings
 nnoremap <M-k> :normal <c-r>=Resize('+')<CR><CR>
