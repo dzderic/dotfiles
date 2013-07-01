@@ -4,3 +4,6 @@
 xmonad-*-linux
 /_vim/.netrwhist
 *.pyc
+/_emacs.d/url
+*.cache
+.*.swp
