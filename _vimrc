@@ -15,7 +15,15 @@ let g:neobundle#types#git#default_protocol = 'http'
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Bundles to install
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \   'windows' : 'make -f make_mingw32.mak',
+  \   'cygwin'  : 'make -f make_cygwin.mak',
+  \   'mac'     : 'make -f make_mac.mak',
+  \   'unix'    : 'make -f make_unix.mak',
+  \    },
+  \ }
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'VimClojure'
