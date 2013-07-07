@@ -31,7 +31,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'uggedal/go-vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -249,6 +249,28 @@ let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" vim-airline settings
+" remove separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+" remove unused modes
+let g:airline_enable_fugitive=0
+let g:airline_enable_syntastic=0
+" set second section to filename
+let g:airline_section_b="%f"
+" empty third and fourth sections
+let g:airline_section_c=""
+let g:airline_section_x=""
+" put filetype in fifth section
+let g:airline_section_y="%Y"
+
+" make Esc happen in insert mode without waiting for timeoutlen
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
 
 nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
