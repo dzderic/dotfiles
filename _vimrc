@@ -37,6 +37,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vcscommand.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -255,7 +256,6 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " remove unused modes
-let g:airline_enable_fugitive=0
 let g:airline_enable_syntastic=0
 " set second section to filename
 let g:airline_section_b="%f"
