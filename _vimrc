@@ -86,6 +86,9 @@ nmap <leader>a <Esc>:Ack!
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
+" Easier than ':set paste'
+map <leader>p :set paste!<CR>
+
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
 "
