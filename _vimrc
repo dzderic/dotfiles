@@ -252,20 +252,20 @@ let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " vim-airline settings
-" remove separators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-" remove unused modes
-let g:airline_enable_syntastic=0
-" set second section to filename
-let g:airline_section_b="%f"
-" empty third and fourth sections
-let g:airline_section_c=""
-let g:airline_section_x=""
-" put filetype in fifth section
-let g:airline_section_y="%Y"
+let g:airline_left_sep=''         " remove left
+let g:airline_right_sep=''        " and right separator
+let g:airline_enable_syntastic=0  " unused
+let g:airline_mode_map = {
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'v'  : 'V',
+  \ 'V'  : 'V-',
+  \ 'c'  : 'C',
+  \ '' : 'V*',
+  \ }                             " better mode mappings
 
-" make Esc happen in insert mode without waiting for timeoutlen
+" make esc happen in insert mode without waiting for timeoutlen
 augroup FastEscape
   autocmd!
   au InsertEnter * set timeoutlen=0
