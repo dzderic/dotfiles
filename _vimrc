@@ -38,6 +38,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vcscommand.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'SudoEdit.vim'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -47,11 +48,8 @@ NeoBundleCheck
 " =========
 let mapleader=","             " change the leader to be a comma vs slash
 
-" Seriously, guys. It's not like :W is bound to anything anyway.
-command! W :w
-
-" sudo write this
-cmap W! w !sudo tee % >/dev/null
+" Sudo write this
+cnoremap W SudoWrite
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -247,9 +245,6 @@ let vimclojure#ParenRainbow = 1
 " ==============
 " Other settings
 " ==============
-" hack around the unite.vim sudoers warning
-let $SUDO_USER = ""
-
 " Unite.vim config
 let g:unite_source_history_yank_enable = 1
 let g:unite_force_overwrite_statusline = 0
