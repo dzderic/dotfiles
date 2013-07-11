@@ -304,22 +304,19 @@ nnoremap <M-h> :call Resize('<', 5)<CR>
 nnoremap <M-l> :call Resize('>', 5)<CR>
 
 function! WindowPosition(dir)
-  let this = winnr()
+  let this = winnr()  " current window number
+
   if a:dir == 'horizontal'
     " go up, and check if we haven't moved
     execute 'wincmd k'
-    if this == winnr()
-      return 'top'
-    endif
+    if this == winnr() | return 'top' | endif
 
     " reset
     execute this . 'wincmd w'
 
     " go down, and check if we haven't moved
     execute 'wincmd j'
-    if this == winnr()
-      return 'bottom'
-    endif
+    if this == winnr() | return 'bottom' | endif
 
     " reset
     execute this . 'wincmd w'
@@ -329,18 +326,14 @@ function! WindowPosition(dir)
   elseif a:dir == 'vertical'
     " go left, and check if we haven't moved
     execute 'wincmd h'
-    if this == winnr()
-      return 'left'
-    endif
+    if this == winnr() | return 'left' | endif
 
     " reset
     execute this . 'wincmd w'
 
     " go right, and check if we haven't moved
     execute 'wincmd l'
-    if this == winnr()
-      return 'right'
-    endif
+    if this == winnr() | return 'right' | endif
 
     " reset
     execute this . 'wincmd w'
@@ -351,33 +344,24 @@ function! WindowPosition(dir)
 endfunction
 
 function! Resize(dir, n)
-  if a:dir == '+'
+  if a:dir == '+' || a:dir == '-'
     let pos = WindowPosition('horizontal')
+    let opp = (a:dir == '+') ? '-' : '+'  " opposite of `dir`
+
     if pos == 'top' || pos == 'middle'
-      execute "resize -" . a:n
+      execute "resize " . opp . a:n
     elseif pos == 'bottom'
-      execute "resize +" . a:n
+      execute "resize " . a:dir . a:n
     endif
-  elseif a:dir == '-'
-    let pos = WindowPosition('horizontal')
-    if pos == 'top' || pos == 'middle'
-      execute "resize +" . a:n
-    elseif pos == 'bottom'
-      execute "resize -" . a:n
-    endif
-  elseif a:dir == '<'
+  elseif a:dir == '<' || a:dir == '>'
     let pos = WindowPosition('vertical')
+    let vdir = (a:dir == '<') ? '+' : '-'  " direction we pass to `resize`
+    let opp = (a:dir == '<') ? '-' : '+'   " opposite of `dir`
+
     if pos == 'left' || pos == 'middle'
-      execute "vertical resize -" . a:n
+      execute "vertical resize " . opp . a:n
     elseif pos == 'right'
-      execute "vertical resize +" . a:n
-    endif
-  elseif a:dir == '>'
-    let pos = WindowPosition('vertical')
-    if pos == 'left' || pos == 'middle'
-      execute "vertical resize +" . a:n
-    elseif pos == 'right'
-      execute "vertical resize -" . a:n
+      execute "vertical resize " . vdir . a:n
     endif
   endif
 endfunction
