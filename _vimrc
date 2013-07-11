@@ -56,20 +56,29 @@ cmap W! w !sudo tee % >/dev/null
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" vcscommand shortcuts
 " committing
 nmap <leader>vc :VCSCommit<CR>
-
 " checking status
 nmap <leader>vs :VCSStatus<CR>
-
 " checking logs
 nmap <leader>vl :VCSLog<CR>
-
 " diffing
 nmap <leader>vd :VCSDiff<CR>
-
 " blaming
 nmap <leader>vb :VCSBlame<CR>
+
+" fugitive shortcuts
+" committing
+nmap <leader>gc :Gcommit<CR>
+" checking status
+nmap <leader>gs :Gstatus<CR>
+" checking logs
+nmap <leader>gl :Glog<CR>
+" diffing
+nmap <leader>gd :Gdiff<CR>
+" blaming
+nmap <leader>gb :Gblame<CR>
 
 " ctrl-{jklm} changes to that split
 map <c-j> <c-w>j
@@ -84,7 +93,7 @@ map <leader>n :NERDTreeToggle<CR>
 nmap <leader>a <Esc>:Ack!
 
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <leader>u :GundoToggle<CR>
 
 " Easier than ':set paste'
 map <leader>p :set paste!<CR>
