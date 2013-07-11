@@ -80,6 +80,8 @@ nmap <leader>gl :Glog<CR>
 nmap <leader>gd :Gdiff<CR>
 " blaming
 nmap <leader>gb :Gblame<CR>
+" pushing
+nmap <leader>gp :Git push<CR>
 
 " ctrl-{jklm} changes to that split
 map <c-j> <c-w>j
