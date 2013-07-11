@@ -39,6 +39,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'vcscommand.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'SudoEdit.vim'
+NeoBundle 'godlygeek/tabular'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -54,20 +55,31 @@ cnoremap W SudoWrite
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" vcscommand shortcuts
 " committing
 nmap <leader>vc :VCSCommit<CR>
-
 " checking status
 nmap <leader>vs :VCSStatus<CR>
-
 " checking logs
 nmap <leader>vl :VCSLog<CR>
-
 " diffing
 nmap <leader>vd :VCSDiff<CR>
-
 " blaming
 nmap <leader>vb :VCSBlame<CR>
+
+" fugitive shortcuts
+" committing
+nmap <leader>gc :Gcommit<CR>
+" checking status
+nmap <leader>gs :Gstatus<CR>
+" checking logs
+nmap <leader>gl :Glog<CR>
+" diffing
+nmap <leader>gd :Gdiff<CR>
+" blaming
+nmap <leader>gb :Gblame<CR>
+" pushing
+nmap <leader>gp :Git push<CR>
 
 " ctrl-{jklm} changes to that split
 map <c-j> <c-w>j
@@ -82,7 +94,7 @@ map <leader>n :NERDTreeToggle<CR>
 nmap <leader>a <Esc>:Ack!
 
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <leader>u :GundoToggle<CR>
 
 " Easier than ':set paste'
 map <leader>p :set paste!<CR>
@@ -98,6 +110,9 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Map space to insert a space and leave insert mode
 nmap <Space> i <Esc>l
+
+" align by equal sign
+vnoremap <silent> <leader>a :Tabularize /=<CR>
 
 " ==============
 " Basic settings
@@ -253,11 +268,14 @@ let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " vim-airline settings
-let g:airline_left_sep=''                   " remove left
-let g:airline_right_sep=''                  " and right separator
-let g:airline_section_z='%p%% | %lL | %cC'  " make this more ovbious
-let g:airline_paste_symbol='| P'            " better paste symbol
-let g:airline_enable_syntastic=0            " unused
+let g:airline_theme = 'dark'                                        " use dark theme
+let g:airline_left_sep = ''                                         " remove left
+let g:airline_right_sep = ''                                        " and right separator
+let g:airline_section_b = '%{substitute(getcwd(), $HOME,"~", "")}'  " section b == cwd
+let g:airline_section_z = '%p%% | %lL | %cC'                        " make this more ovbious
+let g:airline_paste_symbol = '| P'                                  " better paste symbol
+let g:airline_enable_fugitive = 0                                   " unused
+let g:airline_enable_syntastic = 0                                  " unused
 let g:airline_mode_map = {
   \ 'n'  : 'N',
   \ 'i'  : 'I',
@@ -279,69 +297,71 @@ nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/a
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 
-" Window resizing mappings
-nnoremap <M-k> :normal <c-r>=Resize('+')<CR><CR>
-nnoremap <M-j> :normal <c-r>=Resize('-')<CR><CR>
-nnoremap <M-h> :normal <c-r>=Resize('<')<CR><CR>
-nnoremap <M-l> :normal <c-r>=Resize('>')<CR><CR>
-function! Resize(dir)
-  let this = winnr()
-  if '+' == a:dir || '-' == a:dir
-    execute "normal <c-w>k"
-    let up = winnr()
-    if up != this
-      execute "normal <c-w>j"
-      let x = 'bottom'
-    else
-      let x = 'top'
-    endif
-  elseif '>' == a:dir || '<' == a:dir
-    execute "normal <c-w>h"
-    let left = winnr()
-    if left != this
-      execute "normal <c-w>l"
-      let x = 'right'
-    else
-      let x = 'left'
-    endif
-  endif
-  if ('+' == a:dir && 'bottom' == x) || ('-' == a:dir && 'top' == x)
-    return "5\<c-v>\<c-w>+"
-  elseif ('-' == a:dir && 'bottom' == x) || ('+' == a:dir && 'top' == x)
-    return "5\<c-v>\<c-w>-"
-  elseif ('<' == a:dir && 'left' == x) || ('>' == a:dir && 'right' == x)
-    return "5\<c-v>\<c-w><"
-  elseif ('>' == a:dir && 'left' == x) || ('<' == a:dir && 'right' == x)
-    return "5\<c-v>\<c-w>>"
-  else
-    echo "oops. check your ~/.vimrc"
-    return ""
+" window resizing mappings
+nnoremap <M-k> :call Resize('+', 5)<CR>
+nnoremap <M-j> :call Resize('-', 5)<CR>
+nnoremap <M-h> :call Resize('<', 5)<CR>
+nnoremap <M-l> :call Resize('>', 5)<CR>
+
+function! WindowPosition(dir)
+  let this = winnr()  " current window number
+
+  if a:dir == 'horizontal'
+    " go up, and check if we haven't moved
+    execute 'wincmd k'
+    if this == winnr() | return 'top' | endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " go down, and check if we haven't moved
+    execute 'wincmd j'
+    if this == winnr() | return 'bottom' | endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " we're in the middle
+    return 'middle'
+  elseif a:dir == 'vertical'
+    " go left, and check if we haven't moved
+    execute 'wincmd h'
+    if this == winnr() | return 'left' | endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " go right, and check if we haven't moved
+    execute 'wincmd l'
+    if this == winnr() | return 'right' | endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " we're in the middle
+    return 'middle'
   endif
 endfunction
 
-" align stuff
-command! -nargs=? -range Align <line1>,<line2>call AlignSection('<args>')
-vnoremap <silent> <Leader>a :Align<CR>
-function! AlignSection(regex) range
-  let extra = 1
-  let sep = empty(a:regex) ? '=' : a:regex
-  let maxpos = 0
-  let section = getline(a:firstline, a:lastline)
-  for line in section
-    let pos = match(line, ' *'.sep)
-    if maxpos < pos
-      let maxpos = pos
-    endif
-  endfor
-  call map(section, 'AlignLine(v:val, sep, maxpos, extra)')
-  call setline(a:firstline, section)
-endfunction
+function! Resize(dir, n)
+  if a:dir == '+' || a:dir == '-'
+    let pos = WindowPosition('horizontal')
+    let opp = (a:dir == '+') ? '-' : '+'  " opposite of `dir`
 
-function! AlignLine(line, sep, maxpos, extra)
-  let m = matchlist(a:line, '\(.\{-}\) \{-}\('.a:sep.'.*\)')
-  if empty(m)
-    return a:line
+    if pos == 'top' || pos == 'middle'
+      execute "resize " . opp . a:n
+    elseif pos == 'bottom'
+      execute "resize " . a:dir . a:n
+    endif
+  elseif a:dir == '<' || a:dir == '>'
+    let pos = WindowPosition('vertical')
+    let vdir = (a:dir == '<') ? '+' : '-'  " direction we pass to `resize`
+    let opp = (a:dir == '<') ? '-' : '+'   " opposite of `dir`
+
+    if pos == 'left' || pos == 'middle'
+      execute "vertical resize " . opp . a:n
+    elseif pos == 'right'
+      execute "vertical resize " . vdir . a:n
+    endif
   endif
-  let spaces = repeat(' ', a:maxpos - strlen(m[1]) + a:extra)
-  return m[1] . spaces . m[2]
 endfunction
