@@ -271,14 +271,14 @@ let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " vim-airline settings
-let g:airline_theme = 'dark'
-let g:airline_left_sep=''                   " remove left
-let g:airline_right_sep=''                  " and right separator
-let g:airline_section_b = '%{substitute(getcwd(), $HOME, "~", "")}'  " section b == cwd
-let g:airline_section_z='%p%% | %lL | %cC'  " make this more ovbious
-let g:airline_paste_symbol='| P'            " better paste symbol
-let g:airline_enable_fugitive = 0           " unused
-let g:airline_enable_syntastic=0            " unused
+let g:airline_theme = 'dark'                                        " use dark theme
+let g:airline_left_sep = ''                                         " remove left
+let g:airline_right_sep = ''                                        " and right separator
+let g:airline_section_b = '%{substitute(getcwd(), $HOME,"~", "")}'  " section b == cwd
+let g:airline_section_z = '%p%% | %lL | %cC'                        " make this more ovbious
+let g:airline_paste_symbol = '| P'                                  " better paste symbol
+let g:airline_enable_fugitive = 0                                   " unused
+let g:airline_enable_syntastic = 0                                  " unused
 let g:airline_mode_map = {
   \ 'n'  : 'N',
   \ 'i'  : 'I',
