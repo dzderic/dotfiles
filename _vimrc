@@ -297,42 +297,87 @@ nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/a
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 
-" Window resizing mappings
-nnoremap <M-k> :normal <c-r>=Resize('+')<CR><CR>
-nnoremap <M-j> :normal <c-r>=Resize('-')<CR><CR>
-nnoremap <M-h> :normal <c-r>=Resize('<')<CR><CR>
-nnoremap <M-l> :normal <c-r>=Resize('>')<CR><CR>
-function! Resize(dir)
+" window resizing mappings
+nnoremap <M-k> :call Resize('+', 5)<CR>
+nnoremap <M-j> :call Resize('-', 5)<CR>
+nnoremap <M-h> :call Resize('<', 5)<CR>
+nnoremap <M-l> :call Resize('>', 5)<CR>
+
+function! WindowPosition(dir)
   let this = winnr()
-  if '+' == a:dir || '-' == a:dir
-    execute "normal <c-w>k"
-    let up = winnr()
-    if up != this
-      execute "normal <c-w>j"
-      let x = 'bottom'
-    else
-      let x = 'top'
+  if a:dir == 'horizontal'
+    " go up, and check if we haven't moved
+    execute 'wincmd k'
+    if this == winnr()
+      return 'top'
     endif
-  elseif '>' == a:dir || '<' == a:dir
-    execute "normal <c-w>h"
-    let left = winnr()
-    if left != this
-      execute "normal <c-w>l"
-      let x = 'right'
-    else
-      let x = 'left'
+
+    " reset
+    execute this . 'wincmd w'
+
+    " go down, and check if we haven't moved
+    execute 'wincmd j'
+    if this == winnr()
+      return 'bottom'
     endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " we're in the middle
+    return 'middle'
+  elseif a:dir == 'vertical'
+    " go left, and check if we haven't moved
+    execute 'wincmd h'
+    if this == winnr()
+      return 'left'
+    endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " go right, and check if we haven't moved
+    execute 'wincmd l'
+    if this == winnr()
+      return 'right'
+    endif
+
+    " reset
+    execute this . 'wincmd w'
+
+    " we're in the middle
+    return 'middle'
   endif
-  if ('+' == a:dir && 'bottom' == x) || ('-' == a:dir && 'top' == x)
-    return "5\<c-v>\<c-w>+"
-  elseif ('-' == a:dir && 'bottom' == x) || ('+' == a:dir && 'top' == x)
-    return "5\<c-v>\<c-w>-"
-  elseif ('<' == a:dir && 'left' == x) || ('>' == a:dir && 'right' == x)
-    return "5\<c-v>\<c-w><"
-  elseif ('>' == a:dir && 'left' == x) || ('<' == a:dir && 'right' == x)
-    return "5\<c-v>\<c-w>>"
-  else
-    echo "oops. check your ~/.vimrc"
-    return ""
+endfunction
+
+function! Resize(dir, n)
+  if a:dir == '+'
+    let pos = WindowPosition('horizontal')
+    if pos == 'top' || pos == 'middle'
+      execute "resize -" . a:n
+    elseif pos == 'bottom'
+      execute "resize +" . a:n
+    endif
+  elseif a:dir == '-'
+    let pos = WindowPosition('horizontal')
+    if pos == 'top' || pos == 'middle'
+      execute "resize +" . a:n
+    elseif pos == 'bottom'
+      execute "resize -" . a:n
+    endif
+  elseif a:dir == '<'
+    let pos = WindowPosition('vertical')
+    if pos == 'left' || pos == 'middle'
+      execute "vertical resize -" . a:n
+    elseif pos == 'right'
+      execute "vertical resize +" . a:n
+    endif
+  elseif a:dir == '>'
+    let pos = WindowPosition('vertical')
+    if pos == 'left' || pos == 'middle'
+      execute "vertical resize +" . a:n
+    elseif pos == 'right'
+      execute "vertical resize -" . a:n
+    endif
   endif
 endfunction
