@@ -40,6 +40,7 @@ NeoBundle 'vcscommand.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'SudoEdit.vim'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'tpope/vim-unimpaired'
 
 " Bundle installation check.
 NeoBundleCheck
