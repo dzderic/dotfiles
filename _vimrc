@@ -42,6 +42,7 @@ NeoBundle 'SudoEdit.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'takac/vim-commandcaps'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -52,7 +53,7 @@ NeoBundleCheck
 let mapleader=","             " change the leader to be a comma vs slash
 
 " sudo write this
-command W SudoWrite
+cnoremap W! SudoWrite
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
