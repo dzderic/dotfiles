@@ -41,6 +41,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'SudoEdit.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Shougo/unite-outline'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -267,6 +268,15 @@ let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
+" use fuzzy matcher for unite-outline
+call unite#custom#source('outline', 'matchers', ['matcher_fuzzy'])
+
+" Unite.vim key bindings
+nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
+nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+
 " vim-airline settings
 let g:airline_theme = 'dark'                                        " use dark theme
 let g:airline_left_sep = ''                                         " remove left
@@ -292,10 +302,6 @@ augroup FastEscape
   au InsertEnter * set timeoutlen=0
   au InsertLeave * set timeoutlen=1000
 augroup END
-
-nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
-nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 
 " window resizing mappings
 nnoremap <M-k> :call Resize('+', 5)<CR>
