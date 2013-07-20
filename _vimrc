@@ -51,8 +51,8 @@ NeoBundleCheck
 " =========
 let mapleader=","             " change the leader to be a comma vs slash
 
-" Sudo write this
-cnoremap W SudoWrite
+" sudo write this
+command W SudoWrite
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
