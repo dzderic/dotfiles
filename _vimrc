@@ -44,6 +44,7 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
+NeoBundle 'tomtom/tcomment_vim'
 
 " Bundle installation check.
 NeoBundleCheck
