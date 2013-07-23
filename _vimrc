@@ -119,6 +119,9 @@ nmap <Space> i <Esc>l
 " align by equal sign
 vnoremap <silent> <leader>a :Tabularize /=<CR>
 
+" <leader>c for commenting out
+noremap <silent> <leader>c :TComment<cr>
+
 " ==============
 " Basic settings
 " ==============
