@@ -9,6 +9,9 @@ echo
 cd $HOME
 
 function symlink() {
+    # Remove the old config if it's not a symlink
+    [ -f "$2" ] && [ ! -L "$2" ] && rm -f "$2"
+
     if [[ ! -a "$2" ]]; then
         echo "Linking '$1' to '$2'"
         ln -s "$1" "$2"
@@ -16,10 +19,12 @@ function symlink() {
 }
 
 for FILE in $FILES; do
-    # Remove the old config if it's not a symlink
-    [ -f ".$FILE" ] && [ ! -L ".$FILE" ] && rm -f ".$FILE"
-
     # Symlink the config to the one in the repo
     symlink "$CHECKOUT_DIR/_$FILE" ".$FILE"
 done
+
+# Link .bashrc to .bash_profile
+symlink "$CHECKOUT_DIR/_bash_profile" ".bashrc"
+
+# Link the dircolors checkout
 symlink "$CHECKOUT_DIR/dircolors-solarized/dircolors.ansi-dark" .dircolors
