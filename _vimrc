@@ -284,13 +284,13 @@ nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 
 " vim-airline settings
-let g:airline_theme = 'dark'                                        " use dark theme
+let g:airline_theme = 'powerlineish'                                " looks better than 'dark'
 let g:airline_left_sep = ''                                         " remove left
 let g:airline_right_sep = ''                                        " and right separator
 let g:airline_section_b = '%{substitute(getcwd(), $HOME,"~", "")}'  " section b == cwd
 let g:airline_section_z = '%p%% | %lL | %cC'                        " make this more ovbious
 let g:airline_paste_symbol = '| P'                                  " better paste symbol
-let g:airline_enable_fugitive = 0                                   " unused
+let g:airline_enable_branch = 0                                     " unused
 let g:airline_enable_syntastic = 0                                  " unused
 let g:airline_mode_map = {
   \ 'n'  : 'N',
