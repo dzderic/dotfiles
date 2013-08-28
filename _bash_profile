@@ -42,7 +42,7 @@ export PROMPT_COMMAND="history -a"
 # Don't write lines starting with a space or repeat entries to the history
 export HISTCONTROL=ignoredups:ignorespace
 
-shopt -s histappend
+[[ `basename $SHELL` == bash ]] && shopt -s histappend
 
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
