@@ -31,7 +31,6 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'uggedal/go-vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'bling/vim-airline'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -45,6 +44,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Bundle installation check.
 NeoBundleCheck
@@ -282,25 +282,6 @@ nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/a
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-
-" vim-airline settings
-let g:airline_theme = 'powerlineish'                                " looks better than 'dark'
-let g:airline_left_sep = ''                                         " remove left
-let g:airline_right_sep = ''                                        " and right separator
-let g:airline_section_b = '%{substitute(getcwd(), $HOME,"~", "")}'  " section b == cwd
-let g:airline_section_z = '%p%% | %lL | %cC'                        " make this more ovbious
-let g:airline_paste_symbol = '| P'                                  " better paste symbol
-let g:airline_enable_branch = 0                                     " unused
-let g:airline_enable_syntastic = 0                                  " unused
-let g:airline_mode_map = {
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'v'  : 'V',
-  \ 'V'  : 'V-',
-  \ 'c'  : 'C',
-  \ '' : 'V*',
-  \ }                             " better mode mappings
 
 " make esc happen in insert mode without waiting for timeoutlen
 augroup FastEscape
