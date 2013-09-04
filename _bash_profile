@@ -44,6 +44,22 @@ export HISTCONTROL=ignoredups:ignorespace
 
 [[ `basename $SHELL` == bash ]] && shopt -s histappend
 
+settitle() {  # change the title of the current window
+  printf "\033k$1\033\\"
+}
+
+ssh() {  # set the title of the current window to the host we're sshing into
+  settitle "ssh:$*"
+  command ssh "$@"
+  settitle `basename $SHELL`
+}
+
+vim() {  # set the title of the current window to the file we're editing
+  settitle "vim:$( basename $1 )"
+  command vim "$@"
+  settitle `basename $SHELL`
+}
+
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
 
