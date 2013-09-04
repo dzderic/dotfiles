@@ -55,7 +55,7 @@ ssh() {  # set the title of the current window to the host we're sshing into
 }
 
 vim() {  # set the title of the current window to the file we're editing
-  settitle "vim:$( basename $1 )"
+  [[ ! -z "$1" ]] && settitle "vim:$( basename $1 )"
   command vim "$@"
   settitle `basename $SHELL`
 }
