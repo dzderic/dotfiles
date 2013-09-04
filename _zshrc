@@ -13,12 +13,11 @@ zstyle ':completion:*:*:*:*:processes' force-list always
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
+setopt inc_append_history
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-# End of lines configured by zsh-newuser-install
 
 . ~/.bash_profile
 unset PS1 # unset the bash prompt
