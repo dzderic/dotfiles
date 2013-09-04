@@ -1,0 +1,29 @@
+{
+	"default_module": "powerline.segments.common",
+	"segment_data": {},
+	"segments": {
+		"right": [
+      {
+        "name": "weather",
+        "priority": 50,
+        "args": {
+          "unit": "C",
+          "location_query": "sydney, australia"
+        }
+      },
+			{
+				"name": "date",
+        "args": {
+          "format": "%d-%b-%Y"
+        }
+			},
+			{
+				"name": "date",
+				"args": {
+					"format": "%I:%M%p",
+					"istime": true
+				}
+			}
+		]
+	}
+}
