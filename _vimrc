@@ -158,7 +158,7 @@ set grepprg=ack         " replace the default grep program with ack
 
 """ Insert completion
 " don't select first item, follow typing in autocomplete
-set completeopt=menuone,longest,preview
+set completeopt=menuone,longest
 set pumheight=6             " Keep a small completion window
 
 """ Moving Around/Editing
