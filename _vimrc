@@ -46,6 +46,8 @@ NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'kevinw/pyflakes-vim'
+NeoBundle 'klen/python-mode'
+NeoBundle 'ervandew/supertab'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -290,6 +292,13 @@ augroup FastEscape
   au InsertEnter * set timeoutlen=0
   au InsertLeave * set timeoutlen=1000
 augroup END
+
+" make supertab smart by default
+let g:SuperTabDefaultCompletionType = "context"
+
+" make python-mode bearable
+let g:pymode_run = 0
+let g:pymode_lint = 0
 
 " window resizing mappings
 nnoremap <M-k> :call Resize('+', 5)<CR>
