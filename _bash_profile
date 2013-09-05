@@ -61,6 +61,13 @@ vim() {  # set the title of the current window to the file we're editing
   settitle `basename $SHELL`
 }
 
+# start powerline-daemon if it is in $PATH and not already running
+if hash powerline-daemon 2>/dev/null; then
+    if [ -z "$( ps aux | grep powerline-daemon | grep -v grep )" ]; then
+        powerline-daemon
+    fi
+fi
+
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
 
