@@ -254,6 +254,7 @@ autocmd FileType puppet setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+autocmd FileType python nmap <buffer> K :RopeShowDoc<cr>
 
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -298,6 +299,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " make python-mode bearable
 let g:pymode_run = 0
+let g:pymode_doc = 0
 let g:pymode_lint = 0
 
 " window resizing mappings
