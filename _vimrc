@@ -45,6 +45,7 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+NeoBundle 'kevinw/pyflakes-vim'
 
 " Bundle installation check.
 NeoBundleCheck
