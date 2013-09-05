@@ -125,6 +125,9 @@ vnoremap <silent> <leader>a :Tabularize /=<CR>
 " <leader>c for commenting out
 noremap <silent> <leader>c :TComment<cr>
 
+" disable the 'Q' key
+noremap Q <Nop>
+
 " ==============
 " Basic settings
 " ==============
