@@ -48,6 +48,7 @@ NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'kevinw/pyflakes-vim'
 NeoBundle 'klen/python-mode'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'vim-coffee-script'
 
 " Bundle installation check.
 NeoBundleCheck
