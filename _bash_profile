@@ -51,7 +51,7 @@ settitle() {  # change the title of the current window
 }
 
 ssh() {  # set the title of the current window to the host we're sshing into
-  settitle "@$*"
+  settitle "@$( cut -d@ -f2 <<< $* )"
   command ssh "$@"
   settitle `basename $SHELL`
 }
