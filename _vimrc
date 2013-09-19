@@ -57,6 +57,7 @@ NeoBundleCheck
 " Shortcuts
 " =========
 let mapleader=","             " change the leader to be a comma vs slash
+let maplocalleader=","        " change the localleader to also be a comma vs slash
 
 " sudo write this
 cnoremap W! SudoWrite
