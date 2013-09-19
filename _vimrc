@@ -64,17 +64,8 @@ cnoremap W! SudoWrite
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" vcscommand shortcuts
-" committing
-nmap <leader>vc :VCSCommit<CR>
-" checking status
-nmap <leader>vs :VCSStatus<CR>
-" checking logs
-nmap <leader>vl :VCSLog<CR>
-" diffing
-nmap <leader>vd :VCSDiff<CR>
-" blaming
-nmap <leader>vb :VCSBlame<CR>
+" change the vcscommand prefix from '<leader>c'
+let g:VCSCommandMapPrefix = '<leader>v'
 
 " fugitive shortcuts
 " committing
@@ -122,9 +113,6 @@ nmap <Space> i <Esc>l
 
 " align by equal sign
 vnoremap <silent> <leader>a :Tabularize /=<CR>
-
-" <leader>c for commenting out
-noremap <silent> <leader>c :TComment<cr>
 
 " disable the 'Q' key
 noremap Q <Nop>
