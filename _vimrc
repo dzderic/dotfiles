@@ -261,6 +261,9 @@ au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
 " Clojure options
 let vimclojure#ParenRainbow = 1
 
+" recognize more crontab files
+autocmd BufNewFile,BufRead cronjobs.* setlocal ft=crontab
+
 " ==============
 " Other settings
 " ==============
