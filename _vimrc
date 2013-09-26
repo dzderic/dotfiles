@@ -50,6 +50,8 @@ NeoBundle 'klen/python-mode'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'jceb/vim-orgmode'
+NeoBundle 'tpope/vim-speeddating'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -298,6 +300,8 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:pymode_run = 0
 let g:pymode_doc = 0
 let g:pymode_lint = 0
+
+let g:org_todo_keywords=['TODO', 'PROGRESS', '|', 'DONE', 'WASTE']
 
 " window resizing mappings
 nnoremap <M-k> :call Resize('+', 5)<CR>
