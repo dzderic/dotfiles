@@ -52,6 +52,7 @@ NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'AndrewRadev/linediff.vim'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -120,6 +121,9 @@ vnoremap <silent> <leader>a :Tabularize /=<CR>
 
 " disable the 'Q' key
 noremap Q <Nop>
+
+" diff sections of text
+map <leader>d :Linediff<CR>
 
 " ==============
 " Basic settings
