@@ -49,6 +49,7 @@ NeoBundle 'kevinw/pyflakes-vim'
 NeoBundle 'klen/python-mode'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " Bundle installation check.
 NeoBundleCheck
