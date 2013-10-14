@@ -211,6 +211,16 @@ set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
+""" Undo settings
+set undofile             " Save undo's after file closes
+set undodir=~/.vim/undo  " where to save undo histories
+set undolevels=1000      " How many undos
+set undoreload=10000     " number of lines to save for undo
+
+if !isdirectory(&l:undodir)
+  call mkdir(&l:undodir)
+endif
+
 " =====
 " Hacks
 " =====
