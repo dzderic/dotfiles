@@ -46,13 +46,13 @@ NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'kevinw/pyflakes-vim'
-NeoBundle 'klen/python-mode'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/linediff.vim'
+NeoBundle 'davidhalter/jedi-vim'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -251,10 +251,8 @@ autocmd FileType html,xhtml,xml,css,htmldjango setlocal expandtab shiftwidth=2 t
 autocmd FileType puppet setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
-au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-autocmd FileType python nmap <buffer> K :RopeShowDoc<cr>
 
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -300,10 +298,9 @@ augroup END
 " make supertab smart by default
 let g:SuperTabDefaultCompletionType = "context"
 
-" make python-mode bearable
-let g:pymode_run = 0
-let g:pymode_doc = 0
-let g:pymode_lint = 0
+" get jedi to create new windows in splits
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = "bottom"
 
 let g:org_todo_keywords=['TODO', 'PROGRESS', '|', 'DONE', 'WASTE']
 
