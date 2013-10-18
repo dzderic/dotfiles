@@ -53,6 +53,7 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'elzr/vim-json'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -244,9 +245,6 @@ set term=screen-256color
 " ===========================================================
 " FileType specific changes
 " ============================================================
-" JSON
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
-"
 " Markdown
 autocmd BufNewFile,BufRead *.md setlocal ft=markdown
 
@@ -324,6 +322,9 @@ nnoremap <M-l> :call Resize('>', 5)<CR>
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_signs = 0
 let g:syntastic_check_on_open = 1
+
+" don't hide some chars in json files
+let g:vim_json_syntax_conceal = 0
 
 function! WindowPosition(dir)
   let this = winnr()  " current window number
