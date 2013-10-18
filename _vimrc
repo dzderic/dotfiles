@@ -45,7 +45,6 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-NeoBundle 'kevinw/pyflakes-vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -53,6 +52,7 @@ NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'scrooloose/syntastic'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -319,6 +319,11 @@ nnoremap <M-k> :call Resize('+', 5)<CR>
 nnoremap <M-j> :call Resize('-', 5)<CR>
 nnoremap <M-h> :call Resize('<', 5)<CR>
 nnoremap <M-l> :call Resize('>', 5)<CR>
+
+" configure syntastic
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_enable_signs = 0
+let g:syntastic_check_on_open = 1
 
 function! WindowPosition(dir)
   let this = winnr()  " current window number
