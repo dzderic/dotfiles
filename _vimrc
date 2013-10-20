@@ -126,6 +126,11 @@ noremap Q <Nop>
 " diff sections of text
 map <leader>d :Linediff<CR>
 
+" underline current line
+nnoremap <Leader>= yypVr=
+nnoremap <Leader>- yypVr-
+nnoremap <Leader># yypVr#
+
 " ==============
 " Basic settings
 " ==============
