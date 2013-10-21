@@ -33,7 +33,6 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'vcscommand.vim'
@@ -54,6 +53,7 @@ NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Bundle installation check.
 NeoBundleCheck
@@ -244,7 +244,7 @@ endfor
 
 " Make colors work
 let &t_Co=256
-colorscheme solarized
+colorscheme Tomorrow-Night
 set term=screen-256color
 
 " ===========================================================
