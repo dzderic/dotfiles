@@ -270,8 +270,9 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 " Ruby
 au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" Javascript
+" Javascript/Coffeescript indendation
 au FileType javascript set shiftwidth=2 tabstop=2 softtabstop=2
+au FileType coffee set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Haskell
 au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
