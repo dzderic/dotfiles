@@ -54,6 +54,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+NeoBundle 'nono/vim-handlebars'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -258,7 +259,7 @@ autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
 
 " Mako/HTML/Django
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,htmldjango,handlebars.html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Puppet
 autocmd FileType puppet setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -329,6 +330,7 @@ nnoremap <M-l> :call Resize('>', 5)<CR>
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_signs = 0
 let g:syntastic_check_on_open = 1
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " don't hide some chars in json files
 let g:vim_json_syntax_conceal = 0
