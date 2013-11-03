@@ -55,6 +55,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'nono/vim-handlebars'
+NeoBundle 'myusuf3/numbers.vim'
 
 " Bundle installation check.
 NeoBundleCheck
