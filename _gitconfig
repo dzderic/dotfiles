@@ -13,3 +13,5 @@
     ui = auto
 [url "https://"]
 	insteadOf = git://
+[push]
+	default = simple
