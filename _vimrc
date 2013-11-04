@@ -98,6 +98,9 @@ map <c-h> <c-w>h
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
+" Toggle line numbers
+map <leader>b :set number! \| NumbersToggle<CR>
+
 " Ack searching
 nmap <leader>a <Esc>:Ack!
 
@@ -109,7 +112,7 @@ map <leader>p :set paste!<CR>
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
-"
+
 " hide matches on <leader>space
 nnoremap <leader><space> :nohlsearch<cr>
 
