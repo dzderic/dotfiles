@@ -43,19 +43,19 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+NeoBundle 'bling/vim-airline'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/linediff.vim'
-NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'myusuf3/numbers.vim'
+NeoBundle 'davidhalter/jedi-vim'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -184,7 +184,7 @@ set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set nosmartindent           " Smart indent breaks Python indenting
-set tabstop=4               " <tab> inserts 4 spaces 
+set tabstop=4               " <tab> inserts 4 spaces
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
@@ -218,7 +218,7 @@ set statusline=%<%f\ %h%m%r%=%l,%c%V\ %P
 """ Searching and Patterns
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
-set smarttab                " Handle tabs more intelligently 
+set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
@@ -338,6 +338,9 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " don't hide some chars in json files
 let g:vim_json_syntax_conceal = 0
+
+" configure airline
+let g:airline_powerline_fonts = 1
 
 function! WindowPosition(dir)
   let this = winnr()  " current window number

@@ -28,7 +28,3 @@ symlink "$CHECKOUT_DIR/_bash_profile" ".bashrc"
 
 # Link the dircolors checkout
 symlink "$CHECKOUT_DIR/dircolors-solarized/dircolors.ansi-dark" .dircolors
-
-# Install the powerline config
-mkdir -p "$HOME/.config/"
-symlink "$CHECKOUT_DIR/_powerline" "$HOME/.config/powerline"
