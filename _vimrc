@@ -297,7 +297,7 @@ let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#source('file_rec/async', 'ignore_pattern', 'bower_components\|node_modules')
+call unite#custom#source('file_rec/async', 'sorters', 'sorter_rank')
 
 " use fuzzy matcher for unite-outline
 call unite#custom#source('outline', 'matchers', ['matcher_fuzzy'])
