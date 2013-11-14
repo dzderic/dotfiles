@@ -100,9 +100,6 @@ map <leader>n :NERDTreeToggle<CR>
 " Toggle line numbers
 map <leader>b :set number! \| NumbersToggle<CR>
 
-" Ack searching
-nmap <leader>a <Esc>:Ack!
-
 " Load the Gundo window
 map <leader>u :GundoToggle<CR>
 
@@ -163,8 +160,6 @@ set vb t_vb=
 set wildignore+=*.so,*.swp,*.o,*.obj,.git,*.pyc,.svn,.hg
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
-
-set grepprg=ack         " replace the default grep program with ack
 
 """ Insert completion
 " don't select first item, follow typing in autocomplete
@@ -300,6 +295,15 @@ call unite#custom#source('file_rec/async', 'sorters', 'sorter_rank')
 
 " use fuzzy matcher for unite-outline
 call unite#custom#source('outline', 'matchers', ['matcher_fuzzy'])
+
+" use ag for searching
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+  \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " Unite.vim key bindings
 nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
