@@ -98,7 +98,7 @@ map <c-h> <c-w>h
 map <leader>n :NERDTreeToggle<CR>
 
 " Toggle line numbers
-map <leader>b :set number! \| NumbersToggle<CR>
+map <leader>b :set number!<CR>
 
 " Load the Gundo window
 map <leader>u :GundoToggle<CR>
