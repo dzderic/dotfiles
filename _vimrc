@@ -286,12 +286,13 @@ autocmd BufNewFile,BufRead cronjobs.* setlocal ft=crontab
 " Other settings
 " ==============
 " Unite.vim config
+let g:unite_source_rec_max_cache_files=10000
 let g:unite_source_history_yank_enable = 1
 let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 10
 let g:unite_prompt = '» '
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#source('file_rec/async', 'sorters', 'sorter_rank')
+call unite#filters#sorter_default#use(['sorter_rank'])
 
 " use fuzzy matcher for unite-outline
 call unite#custom#source('outline', 'matchers', ['matcher_fuzzy'])
@@ -300,9 +301,15 @@ call unite#custom#source('outline', 'matchers', ['matcher_fuzzy'])
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts =
-  \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  \  '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+  \  '.hg --ignore .svn --ignore .git --ignore .bzr ' .
+  \  '--ignore node_modules --ignore bower_components'
   let g:unite_source_grep_recursive_opt = ''
+
+  let g:unite_source_rec_async_command =
+  \  'ag --nocolor --nogroup --ignore .hg --ignore .svn ' .
+  \  '--ignore .git --ignore .bzr --ignore node_modules ' .
+  \  '--ignore bower_components --hidden -g ""'
 endif
 
 " Unite.vim key bindings
