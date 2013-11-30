@@ -19,9 +19,6 @@ export SBT_OPTS="-XX:MaxPermSize=128m"
 export EDITOR=vim
 export PSQL_EDITOR='vim -c "set ft=sql"'
 
-# PATH changes
-export PATH=$PATH:/var/lib/gems/1.8/bin:~/.bin:/opt/sublime:~/.local/bin/:~/bin:/opt/idea/bin
-
 # Prompt
 DEFAULT="[0;0m"
 PINK="[0;35m"
@@ -45,29 +42,6 @@ export PROMPT_COMMAND="history -a"
 export HISTCONTROL=ignoredups:ignorespace
 
 [[ `basename $SHELL` == bash ]] && shopt -s histappend
-
-settitle() {  # change the title of the current window
-  printf "\033k$1\033\\"
-}
-
-ssh() {  # set the title of the current window to the host we're sshing into
-  settitle "@$( cut -d@ -f2 <<< $* )"
-  command ssh "$@"
-  settitle `basename $SHELL`
-}
-
-vim() {  # set the title of the current window to the file we're editing
-  [[ ! -z "$1" ]] && settitle "%%$( basename $1 )"
-  command vim "$@"
-  settitle `basename $SHELL`
-}
-
-# start powerline-daemon if it is in $PATH and not already running
-if hash powerline-daemon 2>/dev/null; then
-    if [ -z "$( ps aux | grep powerline-daemon | grep -v grep )" ]; then
-        powerline-daemon
-    fi
-fi
 
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
