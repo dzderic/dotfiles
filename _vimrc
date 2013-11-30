@@ -38,7 +38,6 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'vcscommand.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'SudoEdit.vim'
-NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
@@ -55,6 +54,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'tommcdo/vim-lion'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -119,7 +119,8 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 nmap <Space> i <Esc>l
 
 " align by equal sign
-vnoremap <silent> <leader>a :Tabularize /=<CR>
+vmap <leader>a gl=
+nmap <leader>a glip=
 
 " disable the 'Q' key
 noremap Q <Nop>
