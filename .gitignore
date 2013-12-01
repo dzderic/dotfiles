@@ -5,6 +5,7 @@ xmonad-*-linux
 /_vim/.netrwhist
 *.pyc
 /_emacs.d/url
+/_emacs.d/.mc-lists.el
 *.cache
 .*.swp
 /_vim/bundle
