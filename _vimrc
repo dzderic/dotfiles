@@ -55,6 +55,7 @@ NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tommcdo/vim-lion'
+NeoBundle 'dag/vim-fish'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -276,6 +277,9 @@ au FileType coffee set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Haskell
 au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
+
+" Fish
+autocmd FileType fish setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Clojure options
 let vimclojure#ParenRainbow = 1
