@@ -1,21 +1,13 @@
 function fish_prompt
-  set_color purple
-  echo -n $USER
-  set_color cyan
-  echo -n '@'
-  set_color yellow
-  echo -n (hostname -s)
+  # $user@$host
+  echo -n -s (set_color purple) $USER (set_color cyan) '@' (set_color yellow) (hostname -s)
 
-  set_color normal
-  echo -n ' '
+  # $cwd
+  echo -n -s ' ' (set_color green) (prompt_pwd) ' '
 
-  set_color $fish_color_cwd
-  echo -n (prompt_pwd)' '
-
-  if set -q VIRTUAL_ENV
+  if set -q VIRTUAL_ENV  # display the virtualenv if we're in one
     echo -n -s (set_color blue) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
   end
 
-  set_color normal
-  echo -n '> '
+  echo -n -s (set_color normal) '➙  '
 end
