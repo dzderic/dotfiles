@@ -5,7 +5,7 @@ set fish_greeting ""
 set PATH /usr/local/bin $PATH
 
 # aliases
-alias ls='gls --color=auto'
+alias ls='ls --color=auto'
 alias l='ls'
 alias ll='ls -lh'
 alias la='ls -la'
