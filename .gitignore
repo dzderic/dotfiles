@@ -13,3 +13,4 @@ xmonad-*-linux
 !/_vim/bundle/neobundle.vim/
 /fish/fish_history
 /fish/fishd*
+/fish/local.fish

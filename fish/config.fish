@@ -21,3 +21,5 @@ eval (dircolors -c ~/.dircolors)
 # configure virtualenv support
 . ~/.config/fish/virtualfish/virtual.fish
 . ~/.config/fish/virtualfish/auto_activation.fish
+
+test -f ~/.config/fish/local.fish ; and . ~/.config/fish/local.fish
