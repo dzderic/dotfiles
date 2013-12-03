@@ -26,5 +26,9 @@ done
 # Link .bashrc to .bash_profile
 symlink "$CHECKOUT_DIR/_bash_profile" ".bashrc"
 
+# Link .bashrc to .bash_profile
+mkdir -p ".config"
+symlink "$CHECKOUT_DIR/fish" ".config/fish"
+
 # Link the dircolors checkout
 symlink "$CHECKOUT_DIR/dircolors-solarized/dircolors.ansi-dark" .dircolors
