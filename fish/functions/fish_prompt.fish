@@ -9,5 +9,14 @@ function fish_prompt
     echo -n -s (set_color blue) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
   end
 
+  set -l git_branch (git rev-parse --symbolic-full-name --abbrev-ref HEAD ^/dev/null)
+  if test -n "$git_branch"
+    echo -n -s (set_color red) '(' $git_branch ') '
+
+    if not test -z (echo (git status --porcelain))
+      echo -n '± '
+    end
+  end
+
   echo -n -s (set_color normal) '➙  '
 end
