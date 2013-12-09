@@ -258,44 +258,13 @@ endif
 " ===========================================================
 " FileType specific changes
 " ============================================================
-" Markdown
-autocmd BufNewFile,BufRead *.md setlocal ft=markdown
+au BufNewFile,BufRead *.md setlocal ft=markdown               " markdown
+au BufNewFile,BufRead *.gradle setlocal ft=groovy             " gradle
+au BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html  " mako/html/django
+au BufNewFile,BufRead cronjobs.* setlocal ft=crontab          " crontab
 
-" Gradle
-autocmd BufNewFile,BufRead *.gradle setlocal ft=groovy
-
-" Mako/HTML/Django
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css,htmldjango,handlebars.html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Puppet
-autocmd FileType puppet setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Python
-au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-" Ruby
-au FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" Javascript/Coffeescript indendation
-au FileType javascript set shiftwidth=2 tabstop=2 softtabstop=2
-au FileType coffee set shiftwidth=2 tabstop=2 softtabstop=2
-
-" Haskell
-au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
-
-" Fish
-autocmd FileType fish setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Vim config
-autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Clojure options
-let vimclojure#ParenRainbow = 1
-
-" recognize more crontab files
-autocmd BufNewFile,BufRead cronjobs.* setlocal ft=crontab
+au FileType html,xhtml,xml,css,htmldjango,handlebars.html,puppet,ruby,javascript,coffee,haskell,fish,vim setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 
 " ==============
 " Other settings
@@ -332,6 +301,9 @@ nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/a
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=grep -start-insert grep:.:-iR<cr>
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+
+" Clojure options
+let vimclojure#ParenRainbow = 1
 
 " make esc happen in insert mode without waiting for timeoutlen
 augroup FastEscape
