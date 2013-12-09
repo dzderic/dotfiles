@@ -1,7 +1,7 @@
 BoldAsFont=yes
 Transparency=off
-Font=Monaco
-FontHeight=12
+Font=Ubuntu Mono For Powerline
+FontHeight=18
 FontSmoothing=full
 BoldAsColour=no
 CursorType=block
