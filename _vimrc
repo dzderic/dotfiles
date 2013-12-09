@@ -288,6 +288,9 @@ au FileType haskell set shiftwidth=2 tabstop=2 softtabstop=2
 " Fish
 autocmd FileType fish setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
+" Vim config
+autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
 " Clojure options
 let vimclojure#ParenRainbow = 1
 
