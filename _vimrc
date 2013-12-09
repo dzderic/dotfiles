@@ -248,6 +248,13 @@ let &t_Co=256
 colorscheme Tomorrow-Night
 set term=screen-256color
 
+" Use a shell that vim works with (ie. not fish)
+if executable('zsh')
+  set shell=zsh
+else
+  set shell=bash
+endif
+
 " ===========================================================
 " FileType specific changes
 " ============================================================
