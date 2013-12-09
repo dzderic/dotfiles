@@ -51,11 +51,11 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
-NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'dag/vim-fish'
+NeoBundle 'chriskempson/base16-vim'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -245,7 +245,7 @@ endfor
 
 " Make colors work
 let &t_Co=256
-colorscheme Tomorrow-Night
+colorscheme base16-tomorrow
 set term=screen-256color
 
 " Use a shell that vim works with (ie. not fish)
