@@ -9,8 +9,9 @@ alias ls='ls --color=auto'
 alias l='ls'
 alias ll='ls -lh'
 alias la='ls -la'
-alias dzdo='sudo'
 alias sl='sl -e'
+
+type -P dzdo >/dev/null ; or alias dzdo='sudo'
 
 # editor settings
 set -x EDITOR vim
