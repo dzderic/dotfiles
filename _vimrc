@@ -338,6 +338,7 @@ let g:vim_json_syntax_conceal = 0
 
 " configure airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
 
 function! WindowPosition(dir)
   let this = winnr()  " current window number
