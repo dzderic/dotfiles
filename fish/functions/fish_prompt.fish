@@ -9,12 +9,19 @@ function fish_prompt
     echo -n -s (set_color blue) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
   end
 
+  # show the git branch if we're in a git repo
   set -l git_branch (git rev-parse --symbolic-full-name --abbrev-ref HEAD ^/dev/null)
   if test -n "$git_branch"
     echo -n -s (set_color red) '(' $git_branch ') '
 
-    if not test -z (echo (git status --porcelain))
-      echo -n '± '
+    # show an icon if there are uncommitted changes
+    if not test -z (echo (git status --porcelain ^/dev/null))
+      echo -n -s (set_color red) '± '
+    end
+
+    # show an icon if there are unpushed changes
+    if not test -z (echo (git log --branches --not --remotes ^/dev/null))
+      echo -n -s (set_color yellow) '⇧ '
     end
   end
 
