@@ -21,7 +21,7 @@ function fish_prompt
 
     # show an icon if there are unpushed changes
     if not test -z (echo (git log --branches --not --remotes ^/dev/null))
-      echo -n -s (set_color yellow) '⇧ '
+      echo -n -s (set_color yellow) '⇧  '
     end
   end
 
