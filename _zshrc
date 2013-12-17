@@ -27,5 +27,5 @@ bindkey -e # use emacs key bindings
 autoload -U select-word-style
 select-word-style bash
 setopt prompt_subst
-export PROMPT='%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[yellow]%}%m%{$reset_color%} %{$fg[green]%}$(disambiguate-keeplast)%{$reset_color%} ➙ '
+export PROMPT='%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[yellow]%}%m%{$reset_color%} %{$fg[green]%}$(disambiguate-keeplast)%{$reset_color%} • '
 export PS1="$PROMPT"
