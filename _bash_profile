@@ -6,7 +6,6 @@ function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
 
 alias ls='ls --color=auto'
 alias sl='sl -e'
-alias tmux="TERM=screen-256color-bce tmux"
 alias tmux-join="tmux new-session -t"
 alias t="tmux attach"
 alias v='vim'
@@ -41,7 +40,7 @@ export PROMPT_COMMAND="history -a"
 # Don't write lines starting with a space or repeat entries to the history
 export HISTCONTROL=ignoredups:ignorespace
 
-[[ `basename $SHELL` == bash ]] && shopt -s histappend
+type shopt >/dev/null 2>&1 && shopt -s histappend
 
 # Include a host-specific config
 [ -f ~/.bash_host ] && . ~/.bash_host
