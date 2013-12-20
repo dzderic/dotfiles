@@ -309,7 +309,7 @@ let vimclojure#ParenRainbow = 1
 augroup FastEscape
   autocmd!
   au InsertEnter * set timeoutlen=0
-  au InsertLeave * set timeoutlen=20
+  au InsertLeave * set timeoutlen=300
 augroup END
 
 " make supertab smart by default
