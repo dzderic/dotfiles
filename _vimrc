@@ -329,6 +329,7 @@ nnoremap <M-l> :call Resize('>', 5)<CR>
 
 " configure syntastic
 let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_enable_signs = 0
 let g:syntastic_check_on_open = 1
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
