@@ -123,8 +123,8 @@ nmap <Space> i <Esc>l
 vmap <leader>a gl=
 nmap <leader>a glip=
 
-" disable the 'Q' key
-noremap Q <Nop>
+" make the Q key more useful
+noremap Q @q
 
 " diff sections of text
 map <leader>d :Linediff<CR>
