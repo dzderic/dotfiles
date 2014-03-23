@@ -56,6 +56,8 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'wellle/targets.vim'
+NeoBundle 'dzderic/vim-rsi'
 
 " Bundle installation check.
 NeoBundleCheck
