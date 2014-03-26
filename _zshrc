@@ -29,3 +29,7 @@ select-word-style bash
 setopt prompt_subst
 export PROMPT='%{$fg[magenta]%}%n%{$fg[cyan]%}@%{$fg[yellow]%}%m%{$reset_color%} %{$fg[green]%}$(disambiguate-keeplast)%{$reset_color%} • '
 export PS1="$PROMPT"
+
+# use the standard bash bindings for jumping to characters
+bindkey '^]' 'vi-find-next-char'
+bindkey '^[^]' 'vi-find-prev-char'
