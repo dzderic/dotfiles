@@ -1,6 +1,6 @@
 BoldAsFont=yes
 Transparency=off
-Font=Ubuntu Mono For Powerline
+Font=Ubuntu Mono derivative Powerline Regular
 FontHeight=18
 FontSmoothing=full
 BoldAsColour=no
