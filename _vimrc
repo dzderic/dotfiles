@@ -148,6 +148,7 @@ set background=dark           " We are using dark background in vim
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
+set nrformats-=octal          " Don't treat numbers with leading zeroes as octal
 
 " Some GUI settings
 set guifont=Ubuntu\ Mono\ 12  " much better font
