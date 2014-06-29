@@ -248,7 +248,7 @@ endfor
 
 " Make colors work
 let &t_Co=256
-colorscheme base16-tomorrow
+colorscheme base16-ocean
 set term=screen-256color
 
 " Use a shell that vim works with (ie. not fish)
