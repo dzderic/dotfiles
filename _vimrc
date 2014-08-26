@@ -120,6 +120,12 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Map space to insert a space and leave insert mode
 nmap <Space> i <Esc>l
 
+" Map tab to indent in insert and visual modes
+nmap <Tab> >>
+vmap <Tab> >>
+nmap <S-Tab> <<
+vmap <S-Tab> <<
+
 " align by equal sign
 vmap <leader>a gl=
 nmap <leader>a glip=
