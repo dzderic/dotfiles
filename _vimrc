@@ -25,7 +25,6 @@ NeoBundle 'Shougo/vimproc', {
   \ }
 
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'VimClojure'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'sjl/gundo.vim'
@@ -42,7 +41,6 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jceb/vim-orgmode'
@@ -51,11 +49,13 @@ NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'nono/vim-handlebars'
-NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'wellle/targets.vim'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 " Bundle installation check.
 NeoBundleCheck
@@ -270,7 +270,7 @@ au BufNewFile,BufRead *.gradle setlocal ft=groovy             " gradle
 au BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html  " mako/html/django
 au BufNewFile,BufRead cronjobs.* setlocal ft=crontab          " crontab
 
-au FileType html,xhtml,xml,css,htmldjango,handlebars.html,puppet,ruby,javascript,coffee,haskell,fish,vim setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au FileType html,xhtml,xml,css,htmldjango,handlebars.html,puppet,ruby,javascript,coffee,haskell,fish,vim,markdown setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 
 " ==============
@@ -336,7 +336,7 @@ nnoremap <M-l> :call Resize('>', 5)<CR>
 
 " configure syntastic
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = []
 let g:syntastic_java_checkers = []
 let g:syntastic_enable_signs = 0
 let g:syntastic_check_on_open = 1

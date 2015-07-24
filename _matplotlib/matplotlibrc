@@ -167,7 +167,7 @@ font.size           : 10.0
                                 # In that case, all text will be sent to TeX for
                                 # processing.
 
-text.hinting : auto # If True, text will be hinted, otherwise not.  This only
+text.hinting : True # If True, text will be hinted, otherwise not.  This only
                     # affects the Agg backend.
 
 # The following settings allow you to select the fonts in math mode.
