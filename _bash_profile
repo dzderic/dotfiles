@@ -6,7 +6,7 @@ function mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; }
 
 alias ls='ls --color=auto'
 alias sl='sl -e'
-alias tmux-join="tmux new-session -t"
+alias tmux='tmux -2'
 alias t="tmux attach"
 alias v='vim'
 alias emacs='TERM=screen-16color emacs -nw'

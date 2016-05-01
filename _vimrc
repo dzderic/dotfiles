@@ -40,7 +40,8 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'takac/vim-commandcaps'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'vim-coffee-script'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'jceb/vim-orgmode'
@@ -239,8 +240,6 @@ endif
 " Hacks
 " =====
 " Handle mintty's escape sequences
-let &t_ti.="^[[?7727h"
-let &t_te.="^[[?7727l"
 noremap <Esc>O[ <Esc>
 noremap! <Esc>O[ <Esc>
 
@@ -253,7 +252,6 @@ endfor
 " Make colors work
 let &t_Co=256
 colorscheme base16-ocean
-set term=screen-256color
 
 " Use a shell that vim works with (ie. not fish)
 if executable('zsh')
@@ -347,7 +345,7 @@ let g:vim_json_syntax_conceal = 0
 
 " configure airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'base16_eighties'
 
 " Add the virtualenv's site-packages to vim path
 if has('python') && !empty($VIRTUAL_ENV)
